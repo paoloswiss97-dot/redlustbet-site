@@ -6,166 +6,41 @@
   <title>RedLustBet</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#000;
-      color:white;
-      font-family:Arial, sans-serif;
-    }
-
-    header{
-      position:fixed;
-      width:100%;
-      top:0;
-      left:0;
-      padding:20px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(0,0,0,0.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
-      z-index:1000;
-    }
-
-    .logo{
-      font-size:30px;
-      font-weight:900;
-      color:#ff1e1e;
-      letter-spacing:1px;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:140px 25px 80px;
-      background:
-      linear-gradient(180deg,#000 0%,#140000 100%);
-    }
-
-    .hero-content{
-      max-width:900px;
-    }
-
-    .badge{
-      color:#ff3b3b;
-      text-transform:uppercase;
-      letter-spacing:4px;
-      font-size:13px;
-      margin-bottom:25px;
-      font-weight:bold;
-    }
-
-    h1{
-      font-size:72px;
-      line-height:1;
-      margin-bottom:25px;
-    }
-
-    .subtitle{
-      font-size:24px;
-      line-height:1.6;
-      color:#c9c9c9;
-      max-width:760px;
-      margin:0 auto 40px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:15px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:18px 34px;
-      border-radius:14px;
-      font-size:18px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn-primary{
-      background:#ff1e1e;
-      color:white;
-    }
-
-    .btn-primary:hover{
-      background:#ff3a3a;
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-    }
-
-    .btn-secondary:hover{
-      background:rgba(255,255,255,0.05);
-    }
-
-    .stats{
-      margin-top:70px;
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      flex-wrap:wrap;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      padding:28px;
-      border-radius:18px;
-      width:220px;
-      backdrop-filter:blur(10px);
-    }
-
-    .card h3{
-      font-size:36px;
-      color:#ff2b2b;
-      margin-bottom:10px;
-    }
-
-    .card p{
-      color:#b3b3b3;
-      font-size:15px;
-    }
-
-    footer{
-      text-align:center;
-      padding:35px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#777;
-      font-size:14px;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#000;color:white;font-family:Arial,sans-serif}
+    header{position:fixed;width:100%;top:0;left:0;padding:18px 35px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);z-index:1000}
+    .logo{font-size:28px;font-weight:900;color:#ff1e1e}
+    .btn{display:inline-block;padding:16px 30px;border-radius:14px;font-size:17px;text-decoration:none;font-weight:bold}
+    .btn-primary{background:#ff1e1e;color:white}
+    .btn-secondary{border:1px solid rgba(255,255,255,.25);color:white}
+    .hero{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:140px 25px 80px;background:linear-gradient(180deg,#000,#150000)}
+    .hero-content{max-width:930px}
+    .badge{color:#ff3b3b;text-transform:uppercase;letter-spacing:4px;font-size:13px;margin-bottom:25px;font-weight:bold}
+    h1{font-size:70px;line-height:1;margin-bottom:25px}
+    .subtitle{font-size:24px;line-height:1.6;color:#c9c9c9;max-width:760px;margin:0 auto 38px}
+    .buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+    section{padding:90px 25px}
+    .container{max-width:1100px;margin:auto}
+    .section-title{text-align:center;font-size:42px;margin-bottom:45px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+    .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);padding:30px;border-radius:20px}
+    .card h3{color:#ff2b2b;font-size:28px;margin-bottom:14px}
+    .card p{color:#bbb;line-height:1.6;font-size:17px}
+    .dark-section{background:#070707}
+    .cta{text-align:center;background:linear-gradient(180deg,#120000,#000)}
+    .cta h2{font-size:52px;margin-bottom:20px}
+    .cta p{color:#ccc;font-size:21px;margin-bottom:35px}
+    footer{text-align:center;padding:35px;border-top:1px solid rgba(255,255,255,.08);color:#777;font-size:14px}
 
     @media(max-width:768px){
-
-      header{
-        padding:18px 20px;
-      }
-
-      h1{
-        font-size:48px;
-      }
-
-      .subtitle{
-        font-size:20px;
-      }
-
-      .card{
-        width:100%;
-        max-width:320px;
-      }
+      header{padding:16px 18px}
+      .logo{font-size:24px}
+      h1{font-size:46px}
+      .subtitle{font-size:19px}
+      .grid{grid-template-columns:1fr}
+      .section-title{font-size:34px}
+      .cta h2{font-size:38px}
+      .btn{width:100%;max-width:310px}
     }
   </style>
 </head>
@@ -173,69 +48,87 @@
 <body>
 
 <header>
-  <div class="logo">
-    RedLustBet
-  </div>
-
-  <a class="btn btn-primary" href="#">
-    VIP Access
-  </a>
+  <div class="logo">RedLustBet</div>
+  <a class="btn btn-primary" href="#">VIP Access</a>
 </header>
 
 <section class="hero">
-
   <div class="hero-content">
+    <div class="badge">Betting • Premium • Community privata</div>
 
-    <div class="badge">
-      Betting • Premium • Community privata
-    </div>
-
-    <h1>
-      Pronostici Premium<br>
-      e contenuti esclusivi
-    </h1>
+    <h1>Pronostici Premium<br>e contenuti esclusivi</h1>
 
     <p class="subtitle">
-      Accesso giornaliero a pronostici selezionati, community VIP e contenuti esclusivi dedicati ai membri premium.
+      Ogni giorno pronostici selezionati, contenuti riservati e accesso ad una community privata per membri VIP.
     </p>
 
     <div class="buttons">
-
-      <a class="btn btn-primary" href="#">
-        Entra nella VIP
-      </a>
-
-      <a class="btn btn-secondary" href="#">
-        Pronostici Free
-      </a>
-
+      <a class="btn btn-primary" href="#">Entra nella VIP</a>
+      <a class="btn btn-secondary" href="#">Pronostici Free</a>
     </div>
-
-    <div class="stats">
-
-      <div class="card">
-        <h3>VIP</h3>
-        <p>Accesso a contenuti premium e community privata</p>
-      </div>
-
-      <div class="card">
-        <h3>Daily</h3>
-        <p>Pronostici aggiornati ogni giorno</p>
-      </div>
-
-      <div class="card">
-        <h3>18+</h3>
-        <p>Contenuti riservati ad utenti adulti</p>
-      </div>
-
-    </div>
-
   </div>
+</section>
 
+<section>
+  <div class="container">
+    <h2 class="section-title">Come funziona</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>1. Entra gratis</h3>
+        <p>Scopri i pronostici free e capisci subito il nostro metodo.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Passa VIP</h3>
+        <p>Sblocca analisi premium, contenuti riservati e accesso alla community privata.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Segui il club</h3>
+        <p>Ricevi aggiornamenti, contenuti esclusivi e nuove opportunità ogni giorno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="container">
+    <h2 class="section-title">Cosa trovi nella VIP</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Pronostici Daily</h3>
+        <p>Selezioni giornaliere su calcio e mercati ad alta interazione.</p>
+      </div>
+
+      <div class="card">
+        <h3>Community privata</h3>
+        <p>Un ambiente chiuso per membri selezionati, lontano dal caos dei social.</p>
+      </div>
+
+      <div class="card">
+        <h3>Contenuti esclusivi</h3>
+        <p>Materiale riservato ai membri premium, aggiornato con continuità.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Entra nel club RedLustBet</h2>
+    <p>Pronostici, community e contenuti esclusivi in un unico accesso premium.</p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="#">Telegram</a>
+      <a class="btn btn-secondary" href="#">Instagram</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  18+ • Gioca responsabilmente • Nessuna garanzia di vincita
+  18+ • Gioca responsabilmente • Nessuna garanzia di vincita • RedLustBet
 </footer>
 
 </body>
