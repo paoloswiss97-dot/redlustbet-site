@@ -3,44 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RedLustBet</title>
+  <title>RedLustBet | Casino Luxury Betting Club</title>
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#000;color:white;font-family:Arial,sans-serif}
-    header{position:fixed;width:100%;top:0;left:0;padding:18px 35px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);z-index:1000}
-    .logo{font-size:28px;font-weight:900;color:#ff1e1e}
-    .btn{display:inline-block;padding:16px 30px;border-radius:14px;font-size:17px;text-decoration:none;font-weight:bold}
-    .btn-primary{background:#ff1e1e;color:white}
-    .btn-secondary{border:1px solid rgba(255,255,255,.25);color:white}
-    .hero{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:140px 25px 80px;background:linear-gradient(180deg,#000,#150000)}
-    .hero-content{max-width:930px}
-    .badge{color:#ff3b3b;text-transform:uppercase;letter-spacing:4px;font-size:13px;margin-bottom:25px;font-weight:bold}
-    h1{font-size:70px;line-height:1;margin-bottom:25px}
-    .subtitle{font-size:24px;line-height:1.6;color:#c9c9c9;max-width:760px;margin:0 auto 38px}
-    .buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
-    section{padding:90px 25px}
-    .container{max-width:1100px;margin:auto}
-    .section-title{text-align:center;font-size:42px;margin-bottom:45px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-    .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);padding:30px;border-radius:20px}
-    .card h3{color:#ff2b2b;font-size:28px;margin-bottom:14px}
-    .card p{color:#bbb;line-height:1.6;font-size:17px}
-    .dark-section{background:#070707}
-    .cta{text-align:center;background:linear-gradient(180deg,#120000,#000)}
-    .cta h2{font-size:52px;margin-bottom:20px}
-    .cta p{color:#ccc;font-size:21px;margin-bottom:35px}
-    footer{text-align:center;padding:35px;border-top:1px solid rgba(255,255,255,.08);color:#777;font-size:14px}
+    body{background:#030303;color:#fff;font-family:Arial,sans-serif}
+    a{text-decoration:none;color:inherit}
+
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:99;
+      background:rgba(0,0,0,.88);backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(212,175,55,.18);
+      padding:16px 28px;display:flex;justify-content:space-between;align-items:center
+    }
+
+    .brand{font-size:26px;font-weight:900;color:#d71920;letter-spacing:.5px}
+    .gold{color:#d4af37}
+    .btn{
+      display:inline-block;padding:15px 26px;border-radius:14px;
+      font-weight:800;font-size:16px;transition:.25s
+    }
+    .btn-red{background:#d71920;color:#fff;box-shadow:0 0 25px rgba(215,25,32,.35)}
+    .btn-red:hover{background:#ff1e28}
+    .btn-outline{border:1px solid rgba(212,175,55,.45);color:#fff}
+    .btn-outline:hover{background:rgba(212,175,55,.1)}
+
+    section{padding:90px 22px}
+    .container{max-width:1150px;margin:auto}
+
+    .hero{
+      min-height:100vh;display:flex;align-items:center;text-align:center;
+      background:
+        radial-gradient(circle at top,rgba(215,25,32,.22),transparent 35%),
+        linear-gradient(180deg,#050000,#120000 65%,#030303);
+      padding-top:130px
+    }
+
+    .badge{
+      color:#d4af37;text-transform:uppercase;letter-spacing:4px;
+      font-size:13px;font-weight:900;margin-bottom:22px
+    }
+
+    h1{font-size:64px;line-height:1.02;margin-bottom:24px}
+    .subtitle{
+      color:#d6d6d6;font-size:23px;line-height:1.55;
+      max-width:780px;margin:0 auto 34px
+    }
+
+    .buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    .stats-row{
+      margin-top:55px;display:grid;grid-template-columns:repeat(3,1fr);
+      gap:18px
+    }
+
+    .card{
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(212,175,55,.16);
+      border-radius:22px;padding:28px;
+      box-shadow:0 0 35px rgba(0,0,0,.3)
+    }
+
+    .card h3{color:#d4af37;font-size:28px;margin-bottom:12px}
+    .card p{color:#bdbdbd;font-size:16px;line-height:1.55}
+
+    .section-title{text-align:center;font-size:42px;margin-bottom:42px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .dark{background:#070707}
+
+    .preview{
+      background:linear-gradient(145deg,rgba(215,25,32,.18),rgba(212,175,55,.08));
+      border:1px solid rgba(212,175,55,.25)
+    }
+
+    .review{font-style:italic}
+    .paybox{text-align:center;max-width:760px;margin:auto}
+
+    footer{
+      text-align:center;padding:35px 20px;color:#777;
+      border-top:1px solid rgba(212,175,55,.15);font-size:14px
+    }
 
     @media(max-width:768px){
-      header{padding:16px 18px}
-      .logo{font-size:24px}
-      h1{font-size:46px}
+      header{padding:14px 18px}
+      .brand{font-size:22px}
+      h1{font-size:44px}
       .subtitle{font-size:19px}
-      .grid{grid-template-columns:1fr}
+      .btn{width:100%;max-width:320px;text-align:center}
+      .stats-row,.grid{grid-template-columns:1fr}
       .section-title{font-size:34px}
-      .cta h2{font-size:38px}
-      .btn{width:100%;max-width:310px}
     }
   </style>
 </head>
@@ -48,87 +99,126 @@
 <body>
 
 <header>
-  <div class="logo">RedLustBet</div>
-  <a class="btn btn-primary" href="#">VIP Access</a>
+  <div class="brand">Red<span class="gold">Lust</span>Bet</div>
+  <a class="btn btn-red" href="https://t.me/+WToY1dOuOz02NDU0">VIP Access</a>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <div class="badge">Betting • Premium • Community privata</div>
+  <div class="container">
+    <div class="badge">Casino Luxury • Betting Club • Private Access</div>
 
-    <h1>Pronostici Premium<br>e contenuti esclusivi</h1>
+    <h1>Where the game<br>meets desire</h1>
 
     <p class="subtitle">
-      Ogni giorno pronostici selezionati, contenuti riservati e accesso ad una community privata per membri VIP.
+      RedLustBet è il club privato dove pronostici premium, contenuti esclusivi e community selezionata si incontrano in un’esperienza betting luxury.
     </p>
 
     <div class="buttons">
-      <a class="btn btn-primary" href="#">Entra nella VIP</a>
-      <a class="btn btn-secondary" href="#">Pronostici Free</a>
+      <a class="btn btn-red" href="https://t.me/+WToY1dOuOz02NDU0">Entra nella VIP</a>
+      <a class="btn btn-outline" href="https://t.me/redlustb">Telegram Free</a>
+      <a class="btn btn-outline" href="https://www.instagram.com/redlustbet?igsh=NDBqY2lreWJyZG4z">Instagram</a>
+    </div>
+
+    <div class="stats-row">
+      <div class="card">
+        <h3>Daily Picks</h3>
+        <p>Pronostici selezionati ogni giorno sui mercati più interessanti.</p>
+      </div>
+      <div class="card">
+        <h3>VIP Club</h3>
+        <p>Accesso privato a contenuti premium e aggiornamenti riservati.</p>
+      </div>
+      <div class="card">
+        <h3>18+</h3>
+        <p>Esperienza riservata ad utenti adulti. Gioca responsabilmente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <h2 class="section-title">Cosa trovi nella VIP</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Statistiche vincite</h3>
+        <p>Report, risultati e andamento dei pronostici per seguire il percorso del club.</p>
+      </div>
+
+      <div class="card">
+        <h3>Preview contenuti VIP</h3>
+        <p>Anteprime riservate, contenuti selezionati e materiale esclusivo per membri premium.</p>
+      </div>
+
+      <div class="card">
+        <h3>Community privata</h3>
+        <p>Un ambiente chiuso, lontano dal caos dei social, pensato per membri selezionati.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 class="section-title">Come funziona</h2>
+    <h2 class="section-title">Selezione Model</h2>
 
     <div class="grid">
-      <div class="card">
-        <h3>1. Entra gratis</h3>
-        <p>Scopri i pronostici free e capisci subito il nostro metodo.</p>
+      <div class="card preview">
+        <h3>Creator selezionate</h3>
+        <p>Collaborazioni curate per creare contenuti esclusivi legati al mondo RedLustBet.</p>
       </div>
 
-      <div class="card">
-        <h3>2. Passa VIP</h3>
-        <p>Sblocca analisi premium, contenuti riservati e accesso alla community privata.</p>
+      <div class="card preview">
+        <h3>Contenuti brandizzati</h3>
+        <p>Format riconoscibile, elegante e coerente con l’identità luxury del club.</p>
       </div>
 
-      <div class="card">
-        <h3>3. Segui il club</h3>
-        <p>Ricevi aggiornamenti, contenuti esclusivi e nuove opportunità ogni giorno.</p>
+      <div class="card preview">
+        <h3>Private Drops</h3>
+        <p>Uscite dedicate ai membri VIP con accesso anticipato e contenuti speciali.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="dark-section">
+<section class="dark">
   <div class="container">
-    <h2 class="section-title">Cosa trovi nella VIP</h2>
+    <h2 class="section-title">Recensioni utenti</h2>
 
     <div class="grid">
-      <div class="card">
-        <h3>Pronostici Daily</h3>
-        <p>Selezioni giornaliere su calcio e mercati ad alta interazione.</p>
+      <div class="card review">
+        <p>“Finalmente un progetto betting diverso dal solito. Stile, community e contenuti premium.”</p>
       </div>
 
-      <div class="card">
-        <h3>Community privata</h3>
-        <p>Un ambiente chiuso per membri selezionati, lontano dal caos dei social.</p>
+      <div class="card review">
+        <p>“La VIP è chiara, diretta e con aggiornamenti continui. Format molto forte.”</p>
       </div>
 
-      <div class="card">
-        <h3>Contenuti esclusivi</h3>
-        <p>Materiale riservato ai membri premium, aggiornato con continuità.</p>
+      <div class="card review">
+        <p>“RedLustBet ha un’identità precisa. Non è il solito canale pronostici anonimo.”</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <div class="container">
-    <h2>Entra nel club RedLustBet</h2>
-    <p>Pronostici, community e contenuti esclusivi in un unico accesso premium.</p>
+<section>
+  <div class="container paybox">
+    <h2 class="section-title">Pagamento diretto sul sito</h2>
+
+    <p class="subtitle">
+      Presto potrai acquistare l’accesso VIP direttamente da RedLustBet con pagamento sicuro e accesso immediato.
+    </p>
 
     <div class="buttons">
-      <a class="btn btn-primary" href="#">Telegram</a>
-      <a class="btn btn-secondary" href="#">Instagram</a>
+      <a class="btn btn-red" href="https://t.me/+WToY1dOuOz02NDU0">Accedi ora tramite Telegram</a>
+      <a class="btn btn-outline" href="https://t.me/redlustb">Canale Free</a>
     </div>
   </div>
 </section>
 
 <footer>
-  18+ • Gioca responsabilmente • Nessuna garanzia di vincita • RedLustBet
+  RedLustBet • 18+ • Gioca responsabilmente • Nessuna garanzia di vincita • Contenuti riservati ad adulti
 </footer>
 
 </body>
