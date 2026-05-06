@@ -44,7 +44,6 @@
     }
 
     .hero p{color:#cfcfcf;line-height:1.8;font-size:1.1rem;margin-bottom:40px}
-
     .buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
 
     .btn{
@@ -134,9 +133,7 @@
       font-size:1.2rem;
     }
 
-    .instant-access p{
-      color:#ccc;
-    }
+    .instant-access p{color:#ccc}
 
     .language-note{
       margin-top:25px;color:#777;font-size:.85rem;text-align:center;
@@ -312,15 +309,10 @@
     </p>
 
     <div class="instant-access">
-
-      <h4 data-i18n="instant_access_title">
-        Accesso immediato
-      </h4>
-
+      <h4 data-i18n="instant_access_title">Accesso immediato</h4>
       <p data-i18n="instant_access_text">
         Dopo il pagamento riceverai l’accesso ai contenuti premium RedLustBet.
       </p>
-
     </div>
 
     <div class="language-note" id="geo-note"></div>
@@ -338,7 +330,8 @@
   const STRIPE_LINKS = {
     CHF: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
     EUR: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
-    USD: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
+    USD: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
+    CNY: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
   };
 
   const translations = {
@@ -517,10 +510,12 @@
 
   function getCurrencyByCountry(country) {
     const euroCountries = [
-      "IT","FR","DE","ES","PT","NL","BE","AT","IE","FI","GR","LU","SI","SK","EE","LV","LT","CY","MT"
+      "IT","FR","DE","ES","PT","NL","BE","AT","IE","FI",
+      "GR","LU","SI","SK","EE","LV","LT","CY","MT"
     ];
 
     if (country === "CH") return "CHF";
+    if (country === "CN") return "CNY";
     if (euroCountries.includes(country)) return "EUR";
     return "USD";
   }
@@ -539,12 +534,13 @@
 
   function renderPaymentButton(lang, currency) {
     const prices = {
-      CHF: "29 CHF",
-      EUR: "29€",
-      USD: "$29"
+      CHF: "19.99 CHF",
+      EUR: "21€",
+      USD: "$25",
+      CNY: "¥180"
     };
 
-    const link = STRIPE_LINKS[currency];
+    const link = STRIPE_LINKS[currency] || STRIPE_LINKS.USD;
     const label = translations[lang].pay_button;
 
     document.getElementById("payment-button").innerHTML = `
