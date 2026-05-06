@@ -92,10 +92,51 @@
 
     .payment-box{
       background:rgba(255,255,255,.04);border-radius:25px;padding:50px;text-align:center;
-      border:1px solid rgba(255,255,255,.08);max-width:850px;margin:auto;
+      border:1px solid rgba(255,255,255,.08);max-width:950px;margin:auto;
     }
 
     .payment-box p{color:#bdbdbd;margin-top:20px;line-height:1.8}
+
+    .premium-heading{
+      color:#ffce73;
+      font-size:2.8rem;
+      margin-bottom:15px;
+    }
+
+    .premium-intro{
+      font-size:1.1rem;
+      color:#ddd;
+      margin-bottom:35px;
+      max-width:720px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .premium-grid{
+      margin-bottom:40px;
+      text-align:left;
+    }
+
+    .secure-note{
+      margin-top:25px;
+      color:#bdbdbd;
+    }
+
+    .instant-access{
+      margin-top:35px;
+      padding-top:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    .instant-access h4{
+      color:#ffce73;
+      margin-bottom:15px;
+      font-size:1.2rem;
+    }
+
+    .instant-access p{
+      color:#ccc;
+    }
 
     .language-note{
       margin-top:25px;color:#777;font-size:.85rem;text-align:center;
@@ -112,6 +153,7 @@
       .hero p{font-size:1rem}
       section{padding:80px 7%}
       .payment-box{padding:35px 20px}
+      .premium-heading{font-size:2.1rem}
     }
   </style>
 </head>
@@ -221,28 +263,68 @@
 
 <section id="payment">
   <div class="section-title">
-    <h3 data-i18n="payment_title">Accesso Premium</h3>
-    <p data-i18n="payment_subtitle">Pagamento automatico in base alla tua nazione</p>
+    <h3 data-i18n="payment_title">RedLustBet Premium</h3>
+    <p data-i18n="payment_subtitle">
+      Accesso esclusivo a pronostici VIP, contenuti premium e community privata.
+    </p>
   </div>
 
   <div class="payment-box">
-    <div id="payment-button"></div>
 
-    <p data-i18n="payment_methods">
-      Metodi supportati: Stripe, Visa, Mastercard, Apple Pay, PayPal e Revolut.
+    <h2 class="premium-heading" data-i18n="premium_heading">
+      Premium Access
+    </h2>
+
+    <p class="premium-intro" data-i18n="premium_intro">
+      Entra nella sezione privata RedLustBet e ricevi contenuti esclusivi,
+      pronostici selezionati e aggiornamenti riservati.
     </p>
 
-    <div class="buttons" style="margin-top:30px;">
-      <a href="https://paypal.me/TUOUSERNAME" class="btn btn-secondary">
-        PayPal
-      </a>
+    <div class="cards premium-grid">
 
-      <a href="https://revolut.me/TUOUSERNAME" class="btn btn-secondary">
-        Revolut
-      </a>
+      <div class="card">
+        <h4 data-i18n="premium_card_1_title">VIP Predictions</h4>
+        <p data-i18n="premium_card_1_text">
+          Pronostici premium, analisi partite e selezioni esclusive.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4 data-i18n="premium_card_2_title">Private Community</h4>
+        <p data-i18n="premium_card_2_text">
+          Accesso al gruppo premium con aggiornamenti e contenuti riservati.
+        </p>
+      </div>
+
+      <div class="card">
+        <h4 data-i18n="premium_card_3_title">Exclusive Content</h4>
+        <p data-i18n="premium_card_3_text">
+          Contenuti creator, format speciali e materiale non pubblico.
+        </p>
+      </div>
+
+    </div>
+
+    <div id="payment-button"></div>
+
+    <p class="secure-note" data-i18n="secure_payment">
+      Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.
+    </p>
+
+    <div class="instant-access">
+
+      <h4 data-i18n="instant_access_title">
+        Accesso immediato
+      </h4>
+
+      <p data-i18n="instant_access_text">
+        Dopo il pagamento riceverai l’accesso ai contenuti premium RedLustBet.
+      </p>
+
     </div>
 
     <div class="language-note" id="geo-note"></div>
+
   </div>
 </section>
 
@@ -295,9 +377,19 @@
       review_2: "Qualità dei contenuti premium altissima. Design, community e coinvolgimento su un altro livello.",
       review_3: "Gruppo premium molto attivo e supporto veloce. Accesso consigliato.",
 
-      payment_title: "Accesso Premium",
-      payment_subtitle: "Pagamento automatico in base alla tua nazione",
-      payment_methods: "Metodi supportati: Stripe, Visa, Mastercard, Apple Pay, PayPal e Revolut.",
+      payment_title: "RedLustBet Premium",
+      payment_subtitle: "Accesso esclusivo a pronostici VIP, contenuti premium e community privata.",
+      premium_heading: "Premium Access",
+      premium_intro: "Entra nella sezione privata RedLustBet e ricevi contenuti esclusivi, pronostici selezionati e aggiornamenti riservati.",
+      premium_card_1_title: "VIP Predictions",
+      premium_card_1_text: "Pronostici premium, analisi partite e selezioni esclusive.",
+      premium_card_2_title: "Private Community",
+      premium_card_2_text: "Accesso al gruppo premium con aggiornamenti e contenuti riservati.",
+      premium_card_3_title: "Exclusive Content",
+      premium_card_3_text: "Contenuti creator, format speciali e materiale non pubblico.",
+      secure_payment: "Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.",
+      instant_access_title: "Accesso immediato",
+      instant_access_text: "Dopo il pagamento riceverai l’accesso ai contenuti premium RedLustBet.",
       pay_button: "Accedi Premium",
 
       footer_rights: "© 2026 RedLustBet • Tutti i diritti riservati",
@@ -339,9 +431,19 @@
       review_2: "Premium content quality is insane. Design, community and engagement are on another level.",
       review_3: "Very active premium group and fast support. Worth the access.",
 
-      payment_title: "Premium Access",
-      payment_subtitle: "Automatic payment based on your country",
-      payment_methods: "Supported methods: Stripe, Visa, Mastercard, Apple Pay, PayPal and Revolut.",
+      payment_title: "RedLustBet Premium",
+      payment_subtitle: "Exclusive access to VIP predictions, premium content and private community.",
+      premium_heading: "Premium Access",
+      premium_intro: "Join the private RedLustBet section and receive exclusive content, selected predictions and reserved updates.",
+      premium_card_1_title: "VIP Predictions",
+      premium_card_1_text: "Premium predictions, match analysis and exclusive selections.",
+      premium_card_2_title: "Private Community",
+      premium_card_2_text: "Access to the premium group with reserved updates and exclusive content.",
+      premium_card_3_title: "Exclusive Content",
+      premium_card_3_text: "Creator content, special formats and private material.",
+      secure_payment: "Secure payment via Visa, Mastercard, PayPal, Apple Pay and Google Pay.",
+      instant_access_title: "Instant Access",
+      instant_access_text: "After payment, you will receive access to RedLustBet premium content.",
       pay_button: "Get Premium",
 
       footer_rights: "© 2026 RedLustBet • All Rights Reserved",
@@ -383,9 +485,19 @@
       review_2: "La calidad del contenido premium es brutal. Diseño, comunidad y engagement a otro nivel.",
       review_3: "Grupo premium muy activo y soporte rápido. Vale la pena.",
 
-      payment_title: "Acceso Premium",
-      payment_subtitle: "Pago automático según tu país",
-      payment_methods: "Métodos disponibles: Stripe, Visa, Mastercard, Apple Pay, PayPal y Revolut.",
+      payment_title: "RedLustBet Premium",
+      payment_subtitle: "Acceso exclusivo a predicciones VIP, contenido premium y comunidad privada.",
+      premium_heading: "Acceso Premium",
+      premium_intro: "Entra en la sección privada de RedLustBet y recibe contenido exclusivo, predicciones seleccionadas y actualizaciones reservadas.",
+      premium_card_1_title: "Predicciones VIP",
+      premium_card_1_text: "Predicciones premium, análisis de partidos y selecciones exclusivas.",
+      premium_card_2_title: "Comunidad Privada",
+      premium_card_2_text: "Acceso al grupo premium con actualizaciones y contenido reservado.",
+      premium_card_3_title: "Contenido Exclusivo",
+      premium_card_3_text: "Contenido de creadoras, formatos especiales y material privado.",
+      secure_payment: "Pago seguro con Visa, Mastercard, PayPal, Apple Pay y Google Pay.",
+      instant_access_title: "Acceso inmediato",
+      instant_access_text: "Después del pago recibirás acceso al contenido premium de RedLustBet.",
       pay_button: "Acceder Premium",
 
       footer_rights: "© 2026 RedLustBet • Todos los derechos reservados",
