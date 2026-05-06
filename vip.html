@@ -1,150 +1,290 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedLustBet VIP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
+  <title>RedLustBet VIP</title>
 
-        body{
-            background:black;
-            color:white;
-            text-align:center;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            padding:20px;
-            background:
-            radial-gradient(circle at top, rgba(180,0,0,0.35), transparent 40%),
-            radial-gradient(circle at bottom, rgba(255,180,0,0.12), transparent 40%),
-            #000;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        img{
-            width:140px;
-            margin-bottom:20px;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-        h1{
-            font-size:50px;
-            color:#ffce73;
-            margin-bottom:20px;
-        }
+    body{
+      background:#050505;
+      color:white;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
 
-        p{
-            max-width:700px;
-            line-height:1.8;
-            color:#ddd;
-            margin-bottom:30px;
-            font-size:18px;
-        }
+    body::before{
+      content:"";
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+        radial-gradient(circle at top,rgba(180,0,0,.35),transparent 40%),
+        radial-gradient(circle at bottom,rgba(255,180,0,.12),transparent 45%);
+      z-index:-1;
+    }
 
-        .box{
-            background:rgba(255,255,255,0.05);
-            padding:40px;
-            border-radius:20px;
-            width:100%;
-            max-width:800px;
-        }
+    header{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,.75);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
+    }
 
-        .features{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-            margin:30px 0;
-        }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-        .feature{
-            background:rgba(255,255,255,0.05);
-            padding:25px;
-            border-radius:15px;
-        }
+    .logo img{
+      width:55px;
+      height:55px;
+      object-fit:contain;
+    }
 
-        .feature h3{
-            color:#ffce73;
-            margin-bottom:10px;
-        }
+    .logo h1{
+      color:#d60000;
+      font-size:1.6rem;
+      letter-spacing:1px;
+    }
 
-        .btn{
-            display:inline-block;
-            padding:15px 35px;
-            margin:10px;
-            border-radius:50px;
-            text-decoration:none;
-            font-weight:bold;
-        }
+    .back-link{
+      color:#ffce73;
+      text-decoration:none;
+      font-weight:600;
+    }
 
-        .stripe{
-            background:red;
-            color:white;
-        }
+    main{
+      padding:80px 8%;
+      max-width:1200px;
+      margin:auto;
+    }
 
-        .home{
-            background:#ffce73;
-            color:black;
-        }
+    .hero{
+      text-align:center;
+      margin-bottom:60px;
+    }
 
-        @media(max-width:768px){
-            h1{
-                font-size:35px;
-            }
+    .hero h2{
+      font-size:3.5rem;
+      line-height:1.1;
+      margin-bottom:20px;
+      background:linear-gradient(to right,#d60000,#ffce73);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
 
-            p{
-                font-size:16px;
-            }
-        }
-    </style>
+    .hero p{
+      color:#d0d0d0;
+      max-width:760px;
+      margin:auto;
+      line-height:1.8;
+      font-size:1.05rem;
+    }
+
+    .vip-box{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:45px;
+      margin-bottom:35px;
+      box-shadow:0 0 35px rgba(255,0,0,.08);
+    }
+
+    .vip-box h3{
+      color:#ffce73;
+      font-size:1.8rem;
+      margin-bottom:18px;
+    }
+
+    .vip-box p{
+      color:#d0d0d0;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:30px;
+    }
+
+    .card h4{
+      color:#ffce73;
+      margin-bottom:12px;
+      font-size:1.2rem;
+    }
+
+    .card p{
+      color:#d0d0d0;
+      line-height:1.7;
+      margin:0;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+      margin-top:15px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#a00000,#ff0000);
+      color:white;
+      box-shadow:0 0 20px rgba(255,0,0,.3);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    footer{
+      text-align:center;
+      color:#8f8f8f;
+      padding:40px 8%;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:50px;
+    }
+
+    @media(max-width:768px){
+      header{
+        padding:14px 5%;
+      }
+
+      .logo img{
+        width:42px;
+        height:42px;
+      }
+
+      .logo h1{
+        font-size:1.25rem;
+      }
+
+      .back-link{
+        font-size:.85rem;
+      }
+
+      main{
+        padding:60px 7%;
+      }
+
+      .hero h2{
+        font-size:2.5rem;
+      }
+
+      .vip-box{
+        padding:30px 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="box">
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="RedLustBet Logo">
+    <h1>RedLustBet VIP</h1>
+  </div>
 
-        <img src="logo.png" alt="RedLustBet Logo">
+  <a class="back-link" href="index.html">Home</a>
+</header>
 
-        <h1>RedLustBet VIP</h1>
+<main>
 
+  <section class="hero">
+    <h2>Accesso VIP Confermato</h2>
+    <p>
+      Benvenuto nella sezione privata RedLustBet. Qui trovi i contenuti riservati,
+      l’accesso Telegram Premium e gli aggiornamenti dedicati agli utenti VIP.
+    </p>
+  </section>
+
+  <section class="vip-box">
+    <h3>Telegram Premium</h3>
+    <p>
+      Clicca il pulsante qui sotto per entrare nel canale premium RedLustBet.
+    </p>
+
+    <a class="btn btn-primary" href="https://t.me/+WToY1dOuOz02NDU0" target="_blank">
+      Entra nel Telegram VIP
+    </a>
+  </section>
+
+  <section class="vip-box">
+    <h3>Area Premium</h3>
+    <p>
+      Questa pagina è riservata agli utenti che hanno completato il pagamento.
+      Da qui puoi gestire l’accesso ai contenuti VIP, ai pronostici e agli aggiornamenti esclusivi.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h4>Pronostici VIP</h4>
         <p>
-            Accesso esclusivo ai migliori pronostici,
-            contenuti premium e community privata.
+          Selezioni premium, analisi partite e aggiornamenti riservati.
         </p>
+      </div>
 
-        <div class="features">
+      <div class="card">
+        <h4>Contenuti Esclusivi</h4>
+        <p>
+          Format speciali, contenuti creator e materiale non pubblico.
+        </p>
+      </div>
 
-            <div class="feature">
-                <h3>VIP Predictions</h3>
-                <p>Pronostici premium giornalieri.</p>
-            </div>
-
-            <div class="feature">
-                <h3>Private Community</h3>
-                <p>Accesso riservato ai membri premium.</p>
-            </div>
-
-            <div class="feature">
-                <h3>Exclusive Content</h3>
-                <p>Contenuti esclusivi disponibili solo qui.</p>
-            </div>
-
-        </div>
-
-        <a href="https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00" class="btn stripe">
-            Accedi Premium
-        </a>
-
-        <a href="/" class="btn home">
-            Torna alla Home
-        </a>
-
+      <div class="card">
+        <h4>Community Privata</h4>
+        <p>
+          Accesso diretto al gruppo premium e comunicazioni riservate.
+        </p>
+      </div>
     </div>
+  </section>
+
+  <section class="vip-box">
+    <h3>Supporto</h3>
+    <p>
+      Se hai completato il pagamento ma non riesci ad accedere al canale VIP,
+      contatta RedLustBet tramite Instagram.
+    </p>
+
+    <a class="btn btn-primary" href="https://www.instagram.com/redlustbet" target="_blank">
+      Contatta su Instagram
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 RedLustBet • Area VIP • 18+ Only
+</footer>
 
 </body>
 </html>
