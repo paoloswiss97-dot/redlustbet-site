@@ -1,748 +1,240 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-13HJJYSLR2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-13HJJYSLR2');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>RedLustBet</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    html{scroll-behavior:smooth}
-    body{background:#050505;color:white;overflow-x:hidden}
-
-    body::before{
-      content:"";
-      position:fixed;
-      width:100%;
-      height:100%;
-      background:
-      radial-gradient(circle at top,rgba(180,0,0,.35),transparent 40%),
-      radial-gradient(circle at bottom,rgba(255,180,0,.12),transparent 40%);
-      z-index:-1;
-    }
-
-    header{
-      width:100%;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:999;
-      backdrop-filter:blur(12px);
-      background:rgba(0,0,0,.75);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .logo img{
-      width:55px;
-      height:55px;
-      object-fit:contain;
-    }
-
-    .logo h1{
-      color:#d60000;
-      font-size:1.6rem;
-      letter-spacing:1px;
-    }
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:25px;
-      transition:.3s;
-      font-size:.95rem;
-    }
-
-    nav a:hover{color:#ffce73}
-
-    section{padding:100px 8%}
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding-top:140px;
-    }
-
-    .hero-content{max-width:900px}
-
-    .hero h2{
-      font-size:4rem;
-      line-height:1.1;
-      margin-bottom:25px;
-      background:linear-gradient(to right,#d60000,#ffce73);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero p{
-      color:#cfcfcf;
-      line-height:1.8;
-      font-size:1.1rem;
-      margin-bottom:40px;
-    }
-
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:15px 35px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:600;
-      transition:.3s;
-      display:inline-block;
-      border:none;
-      cursor:pointer;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,#a00000,#ff0000);
-      color:white;
-      box-shadow:0 0 20px rgba(255,0,0,.3);
-    }
-
-    .btn-primary:hover{transform:translateY(-3px)}
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.18);
-      color:white;
-      background:rgba(255,255,255,.06);
-    }
-
-    .btn-secondary:hover{background:rgba(255,255,255,.1)}
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h3{
-      font-size:2.6rem;
-      margin-bottom:10px;
-    }
-
-    .section-title p{color:#aaa}
-
-    .cards,.stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
-
-    .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:35px;
-      transition:.3s;
-      backdrop-filter:blur(10px);
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      border-color:rgba(255,0,0,.3);
-      box-shadow:0 0 25px rgba(255,0,0,.12);
-    }
-
-    .card h4{
-      color:#ffce73;
-      margin-bottom:15px;
-      font-size:1.3rem;
-    }
-
-    .card p{
-      color:#d0d0d0;
-      line-height:1.7;
-    }
-
-    .stat{
-      background:linear-gradient(135deg,rgba(255,0,0,.12),rgba(255,180,0,.05));
-      border-radius:22px;
-      padding:35px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .stat h2{
-      color:#ffce73;
-      font-size:2.7rem;
-      margin-bottom:10px;
-    }
-
-    .stat p{color:#d7d7d7}
-
-    .payment-box{
-      background:rgba(255,255,255,.04);
-      border-radius:25px;
-      padding:50px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,.08);
-      max-width:950px;
-      margin:auto;
-    }
-
-    .payment-box p{
-      color:#bdbdbd;
-      margin-top:20px;
-      line-height:1.8;
-    }
-
-    .premium-heading{
-      color:#ffce73;
-      font-size:2.8rem;
-      margin-bottom:15px;
-    }
-
-    .premium-intro{
-      font-size:1.1rem;
-      color:#ddd;
-      margin-bottom:35px;
-      max-width:720px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .premium-grid{
-      margin-bottom:40px;
-      text-align:left;
-    }
-
-    .secure-note{
-      margin-top:25px;
-      color:#bdbdbd;
-    }
-
-    .instant-access{
-      margin-top:35px;
-      padding-top:30px;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-
-    .instant-access h4{
-      color:#ffce73;
-      margin-bottom:15px;
-      font-size:1.2rem;
-    }
-
-    .instant-access p{color:#ccc}
-
-    .language-note{
-      margin-top:25px;
-      color:#777;
-      font-size:.85rem;
-      text-align:center;
-    }
-
-    /* AREA VIP NUOVA */
-    .vip-page{
-      padding-top:120px;
-    }
-
-    .vip-hero{
-      text-align:center;
-      max-width:900px;
-      margin:0 auto 70px;
-    }
-
-    .vip-hero h2{
-      font-size:3.6rem;
-      margin-bottom:20px;
-      background:linear-gradient(to right,#d60000,#ffce73);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .vip-hero p{
-      color:#d0d0d0;
-      line-height:1.8;
-      font-size:1.08rem;
-    }
-
-    .vip-section-box{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:45px;
-      max-width:1200px;
-      margin:0 auto 70px;
-    }
-
-    .vip-gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:26px;
-    }
-
-    .vip-card{
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.09);
-      border-radius:24px;
-      overflow:hidden;
-      transition:.3s;
-    }
-
-    .vip-card:hover{
-      transform:translateY(-7px);
-      border-color:rgba(255,0,0,.35);
-      box-shadow:0 0 28px rgba(255,0,0,.13);
-    }
-
-    .vip-card video{
-      width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
-      background:#111;
-      display:block;
-    }
-
-    .vip-card-content{
-      padding:24px;
-    }
-
-    .vip-card-content h4{
-      color:#ffce73;
-      margin-bottom:10px;
-      font-size:1.2rem;
-    }
-
-    .vip-card-content p{
-      color:#ccc;
-      line-height:1.7;
-    }
-
-    .vip-badge{
-      display:inline-block;
-      background:linear-gradient(135deg,#a00000,#ff0000);
-      color:white;
-      padding:6px 13px;
-      border-radius:30px;
-      font-size:.72rem;
-      font-weight:700;
-      margin-bottom:12px;
-    }
-
-    .photo-gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:18px;
-    }
-
-    .photo-gallery img{
-      width:100%;
-      aspect-ratio:3/4;
-      object-fit:cover;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.1);
-      transition:.3s;
-    }
-
-    .photo-gallery img:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 25px rgba(255,0,0,.18);
-    }
-
-    .support-area,
-    .live-chat-box{
-      text-align:center;
-    }
-
-    .support-area h3,
-    .live-chat-box h3{
-      color:#ffce73;
-      font-size:2rem;
-      margin-bottom:15px;
-    }
-
-    .support-area p,
-    .live-chat-box p{
-      color:#ccc;
-      line-height:1.8;
-      margin-bottom:25px;
-    }
-
-    .fake-chat{
-      max-width:520px;
-      margin:30px auto 0;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:25px;
-      text-align:left;
-    }
-
-    .chat-message{
-      padding:14px 18px;
-      border-radius:18px;
-      margin-bottom:18px;
-      line-height:1.6;
-    }
-
-    .chat-message.bot{
-      background:rgba(255,255,255,.08);
-      color:#ddd;
-    }
-
-    .chat-option{
-      display:block;
-      color:white;
-      text-decoration:none;
-      background:linear-gradient(135deg,#700000,#c90000);
-      padding:14px 18px;
-      border-radius:18px;
-      margin-top:12px;
-      font-weight:600;
-      transition:.3s;
-    }
-
-    .chat-option:hover{
-      transform:translateY(-2px);
-      background:linear-gradient(135deg,#a00000,#ff0000);
-    }
-
-    footer{
-      padding:40px 8%;
-      text-align:center;
-      color:#8f8f8f;
-      font-size:.9rem;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-
-    @media(max-width:768px){
-      header{padding:14px 5%}
-      nav{display:none}
-      .logo img{width:42px;height:42px}
-      .logo h1{font-size:1.35rem}
-      .hero{padding-top:120px}
-      .hero h2{font-size:2.6rem}
-      .hero p{font-size:1rem}
-      section{padding:80px 7%}
-      .payment-box{padding:35px 20px}
-      .premium-heading{font-size:2.1rem}
-
-      .vip-page{padding-top:90px}
-      .vip-hero h2{font-size:2.5rem}
-      .vip-section-box{padding:30px 18px}
-      .photo-gallery{grid-template-columns:repeat(2,1fr)}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedLustBet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,rgba(180,0,0,.35),transparent 40%),
+radial-gradient(circle at bottom,rgba(255,180,0,.12),transparent 40%);
+z-index:-1;
+}
+
+header{
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+}
+
+.logo h1{
+color:#d60000;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 8%;
+}
+
+.hero h2{
+font-size:4rem;
+background:linear-gradient(to right,#d60000,#ffce73);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#ccc;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#a00000,#ff0000);
+color:white;
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.08);
+color:white;
+border:1px solid rgba(255,255,255,.1);
+}
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h3{
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card h4{
+color:#ffce73;
+margin-bottom:10px;
+}
+
+.payment-box{
+max-width:900px;
+margin:auto;
+text-align:center;
+background:rgba(255,255,255,.04);
+padding:50px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="RedLustBet Logo">
-    <h1>RedLustBet</h1>
-  </div>
-
-  <nav>
-    <a href="#services" data-i18n="nav_services">Servizi</a>
-    <a href="#stats" data-i18n="nav_stats">Statistiche</a>
-    <a href="#payment" data-i18n="nav_premium">Premium</a>
-  </nav>
+<div class="logo">
+<img src="logo.png">
+<h1>RedLustBet</h1>
+</div>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h2 data-i18n="hero_title">Dove il gioco incontra il desiderio</h2>
+<div>
+<h2>Dove il gioco incontra il desiderio</h2>
 
-    <p data-i18n="hero_text">
-      Pronostici premium, creator esclusivi e una community internazionale costruita per chi vuole vivere il betting come esperienza luxury.
-    </p>
+<p>
+Pronostici premium, contenuti esclusivi e accesso alla community privata.
+</p>
 
-    <div class="buttons">
-      <a href="https://t.me/redlustb" class="btn btn-primary" target="_blank">
-        Telegram Free
-      </a>
+<div class="buttons">
+<a href="https://t.me/redlustb" class="btn btn-primary">
+Telegram Free
+</a>
 
-      <a href="#payment" class="btn btn-secondary" data-i18n="premium_access">
-        Accedi VIP
-      </a>
-    </div>
-  </div>
+<a href="#payment" class="btn btn-secondary">
+Accedi Premium
+</a>
+</div>
+</div>
 </section>
 
-<section id="services">
-  <div class="section-title">
-    <h3 data-i18n="services_title">I Nostri Servizi</h3>
-    <p data-i18n="services_subtitle">Premium luxury betting entertainment</p>
-  </div>
+<section>
+<div class="section-title">
+<h3>Servizi</h3>
+</div>
 
-  <div class="cards">
-    <div class="card">
-      <h4 data-i18n="service_1_title">Pronostici VIP</h4>
-      <p data-i18n="service_1_text">Analisi calcistiche premium, multiple selezionate e strategie pensate per utenti avanzati.</p>
-    </div>
+<div class="cards">
+<div class="card">
+<h4>Pronostici VIP</h4>
+<p>Analisi premium e contenuti esclusivi.</p>
+</div>
 
-    <div class="card">
-      <h4 data-i18n="service_2_title">Creator Esclusive</h4>
-      <p data-i18n="service_2_text">Collaborazioni internazionali con creator e modelle selezionate per contenuti premium.</p>
-    </div>
+<div class="card">
+<h4>Creator Esclusive</h4>
+<p>Video esclusivi per utenti premium.</p>
+</div>
 
-    <div class="card">
-      <h4 data-i18n="service_3_title">Community Telegram</h4>
-      <p data-i18n="service_3_text">Accesso diretto ai canali RedLustBet con aggiornamenti, contenuti premium e quote live.</p>
-    </div>
-
-    <div class="card">
-      <h4 data-i18n="service_4_title">Statistiche Vincite</h4>
-      <p data-i18n="service_4_text">Performance tracking, risultati e statistiche condivise con la community.</p>
-    </div>
-  </div>
+<div class="card">
+<h4>Community Privata</h4>
+<p>Accesso Telegram premium.</p>
+</div>
+</div>
 </section>
 
-<section id="stats">
-  <div class="section-title">
-    <h3 data-i18n="stats_title">Le Nostre Statistiche</h3>
-    <p data-i18n="stats_subtitle">Numeri, perché internet pretende prove anche dal destino.</p>
-  </div>
+<section id="payment">
+<div class="section-title">
+<h3>Accesso Premium</h3>
+</div>
 
-  <div class="stats">
-    <div class="stat"><h2>87%</h2><p data-i18n="stat_1">Win Rate Premium</p></div>
-    <div class="stat"><h2>25K+</h2><p data-i18n="stat_2">Utenti raggiunti</p></div>
-    <div class="stat"><h2>1M+</h2><p data-i18n="stat_3">Views social</p></div>
-    <div class="stat"><h2>24/7</h2><p data-i18n="stat_4">Community attiva</p></div>
-  </div>
-</section><section id="payment">
-  <div class="section-title">
-    <h3>RedLustBet Premium</h3>
-    <p>
-      Accesso esclusivo ai contenuti VIP RedLustBet
-    </p>
-  </div>
+<div class="payment-box">
+<h2>19.99 CHF</h2>
 
-  <div class="payment-box">
+<p>
+Accesso immediato all’area VIP.
+</p>
 
-    <h2 class="premium-heading">
-      Premium Access
-    </h2>
+<br>
 
-    <p class="premium-intro">
-      Accedi ai video hot esclusivi, galleria privata e contenuti premium.
-    </p>
-
-    <div class="cards premium-grid">
-
-      <div class="card">
-        <h4>Video Hot</h4>
-        <p>
-          Accesso agli ultimi contenuti premium.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Foto Esclusive</h4>
-        <p>
-          Galleria privata premium.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Supporto Diretto</h4>
-        <p>
-          Assistenza immediata su Telegram.
-        </p>
-      </div>
-
-    </div>
-
-    <div id="payment-button">
-      <a href="https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
-         class="btn btn-primary">
-         Accedi Premium • 19.99 CHF
-      </a>
-    </div>
-
-    <p class="secure-note">
-      Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.
-    </p>
-
-    <div class="instant-access">
-      <h4>Accesso immediato</h4>
-      <p>
-        Dopo il pagamento verrai reindirizzato automaticamente alla VIP.
-      </p>
-    </div>
-
-  </div>
+<a href="https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
+class="btn btn-primary">
+Paga Ora
+</a>
+</div>
 </section>
-
-
-<!-- AREA VIP -->
-
-<section id="vip" class="vip-page">
-
-  <div class="vip-hero">
-    <h2>RedLustBet VIP</h2>
-    <p>
-      Video hot, foto esclusive e supporto diretto.
-    </p>
-  </div>
-
-  <!-- VIDEO GALLERY -->
-  <div class="vip-section-box">
-    <div class="section-title">
-      <h3>Ultimi Video Hot</h3>
-      <p>Gli ultimi contenuti caricati.</p>
-    </div>
-
-    <div class="vip-gallery">
-
-      <div class="vip-card">
-        <video controls poster="poster-1.jpg">
-          <source src="video-hot-1.mp4" type="video/mp4">
-        </video>
-
-        <div class="vip-card-content">
-          <span class="vip-badge">NUOVO</span>
-          <h4>🔥 Hot Prediction #1</h4>
-          <p>Ultimo contenuto pubblicato.</p>
-        </div>
-      </div>
-
-      <div class="vip-card">
-        <video controls poster="poster-2.jpg">
-          <source src="video-hot-2.mp4" type="video/mp4">
-        </video>
-
-        <div class="vip-card-content">
-          <h4>🔥 Hot Prediction #2</h4>
-          <p>Secondo contenuto recente.</p>
-        </div>
-      </div>
-
-      <div class="vip-card">
-        <video controls poster="poster-3.jpg">
-          <source src="video-hot-3.mp4" type="video/mp4">
-        </video>
-
-        <div class="vip-card-content">
-          <h4>🔥 Hot Prediction #3</h4>
-          <p>Terzo contenuto recente.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- FOTO GALLERY -->
-  <div class="vip-section-box">
-    <div class="section-title">
-      <h3>Galleria Foto VIP</h3>
-      <p>Foto premium esclusive.</p>
-    </div>
-
-    <div class="photo-gallery">
-
-      <img src="foto-vip-1.jpg">
-      <img src="foto-vip-2.jpg">
-      <img src="foto-vip-3.jpg">
-      <img src="foto-vip-4.jpg">
-      <img src="foto-vip-5.jpg">
-      <img src="foto-vip-6.jpg">
-
-    </div>
-  </div>
-
-
-  <!-- TELEGRAM SUPPORT -->
-  <div class="vip-section-box support-area">
-    <h3>Supporto Telegram</h3>
-
-    <p>
-      Per problemi con accesso o pagamento contattami direttamente.
-    </p>
-
-    <a href="https://t.me/Swiss1997"
-       target="_blank"
-       class="btn btn-primary">
-       Contatta @Swiss1997
-    </a>
-  </div>
-
-
-  <!-- LIVE CHAT -->
-  <div class="vip-section-box live-chat-box">
-
-    <h3>Live Chat Problemi</h3>
-
-    <p>
-      Se hai problemi seleziona una delle opzioni rapide.
-    </p>
-
-    <div class="fake-chat">
-
-      <div class="chat-message bot">
-        Ciao 👋 Come possiamo aiutarti?
-      </div>
-
-      <a href="https://t.me/Swiss1997"
-         target="_blank"
-         class="chat-option">
-         Ho pagato ma non vedo la VIP
-      </a>
-
-      <a href="https://t.me/Swiss1997"
-         target="_blank"
-         class="chat-option">
-         Problemi con i video
-      </a>
-
-      <a href="https://t.me/Swiss1997"
-         target="_blank"
-         class="chat-option">
-         Problemi con le foto
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
 
 <footer>
-  © 2026 RedLustBet • Tutti i diritti riservati
-  <br><br>
-  18+ Only • Gioca responsabilmente
+© 2026 RedLustBet
 </footer>
-
-
-<script>
-  const stripeBtn = document.querySelector("#payment-button a");
-
-  stripeBtn.addEventListener("click", function () {
-    console.log("Redirect Stripe attivo");
-  });
-</script>
 
 </body>
 </html>
