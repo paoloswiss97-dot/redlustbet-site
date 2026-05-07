@@ -1,15 +1,358 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Dashboard VIP - RedLustBet</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(220, 38, 38, 0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.14), transparent 30%),
+        #050505;
+      color: #fff;
+      padding: 18px;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      color: #d4af37;
+      letter-spacing: 0.5px;
+    }
+
+    .logout {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(220,0,0,0.28), rgba(212,175,55,0.08)),
+        rgba(10,10,10,0.92);
+      border: 1px solid rgba(255, 215, 120, 0.18);
+      border-radius: 30px;
+      padding: 34px 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      margin-bottom: 26px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid rgba(212,175,55,0.28);
+      color: #ffd36a;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ff1e1e, #ffd36a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #c8c8c8;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 720px;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e00000, #8b0000, #d4af37);
+      box-shadow: 0 12px 35px rgba(220, 38, 38, 0.32);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.10);
+      min-height: 180px;
+      position: relative;
+    }
+
+    .thumb {
+      height: 130px;
+      background:
+        radial-gradient(circle at center, rgba(220,38,38,0.35), transparent 45%),
+        linear-gradient(135deg, #1a1a1a, #080808);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-body {
+      padding: 14px;
+    }
+
+    .card-body h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .card-body p {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .locked {
+      filter: blur(3px);
+      opacity: 0.45;
+    }
+
+    .lock-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #ffd36a;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .support {
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .support p {
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      header {
+        margin-bottom: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Area VIP RedLustBet</h1>
 
-  <p>Se vedi questa pagina, sei loggato.</p>
+  <header>
+    <div class="logo-box">
+      <img src="logo.png" alt="RedLustBet Logo">
+      <div class="logo-text">RedLustBet</div>
+    </div>
 
-  <button id="logoutBtn">Logout</button>
+    <button class="logout" id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="badge">Area privata</span>
+      <h1>Benvenuto nella VIP Room</h1>
+      <p>
+        Questa è la tua area riservata RedLustBet. Qui verranno caricati video premium,
+        foto VIP, pronostici esclusivi e contenuti riservati agli utenti paganti.
+      </p>
+
+      <div class="warning">
+        Stato account: <strong>registrato</strong>.  
+        Il pagamento premium sarà collegato nello step successivo.
+      </div>
+
+      <div class="cta-row">
+        <a href="https://t.me/+WToY1dOuOz02NDU0" target="_blank" class="btn btn-primary">Telegram Premium</a>
+        <a href="https://t.me/redlustb" target="_blank" class="btn btn-secondary">Telegram Free</a>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="section-title">Ultimi video VIP</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="thumb locked">Video</div>
+          <div class="card-body locked">
+            <h3>Pronostico Hot #1</h3>
+            <p>Contenuto video premium riservato.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+
+        <div class="card">
+          <div class="thumb locked">Video</div>
+          <div class="card-body locked">
+            <h3>Pronostico Hot #2</h3>
+            <p>Contenuto video premium riservato.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+
+        <div class="card">
+          <div class="thumb locked">Video</div>
+          <div class="card-body locked">
+            <h3>Pronostico Hot #3</h3>
+            <p>Contenuto video premium riservato.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Galleria foto VIP</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="thumb locked">Foto</div>
+          <div class="card-body locked">
+            <h3>Set esclusivo #1</h3>
+            <p>Preview riservata ai membri premium.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+
+        <div class="card">
+          <div class="thumb locked">Foto</div>
+          <div class="card-body locked">
+            <h3>Set esclusivo #2</h3>
+            <p>Preview riservata ai membri premium.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+
+        <div class="card">
+          <div class="thumb locked">Foto</div>
+          <div class="card-body locked">
+            <h3>Set esclusivo #3</h3>
+            <p>Preview riservata ai membri premium.</p>
+          </div>
+          <div class="lock-label">Premium bloccato</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="support">
+      <h2 class="section-title">Supporto e problemi</h2>
+      <p>
+        Per problemi di accesso, pagamento o contenuti, usa il contatto Telegram.
+      </p>
+      <a href="https://t.me/redlustb" target="_blank" class="btn btn-primary">Contatta su Telegram</a>
+    </section>
+  </main>
 
   <script type="module">
     import { auth } from "./firebase.js";
@@ -26,5 +369,6 @@
       window.location.href = "login.html";
     });
   </script>
+
 </body>
 </html>
