@@ -150,13 +150,13 @@
 
     .section-title p{color:#aaa}
 
-    .cards,.stats,.reviews{
+    .cards,.stats{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:25px;
     }
 
-    .card,.review{
+    .card{
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
       border-radius:22px;
@@ -171,13 +171,13 @@
       box-shadow:0 0 25px rgba(255,0,0,.12);
     }
 
-    .card h4,.review h5{
+    .card h4{
       color:#ffce73;
       margin-bottom:15px;
       font-size:1.3rem;
     }
 
-    .card p,.review p{
+    .card p{
       color:#d0d0d0;
       line-height:1.7;
     }
@@ -260,6 +260,172 @@
       text-align:center;
     }
 
+    /* AREA VIP NUOVA */
+    .vip-page{
+      padding-top:120px;
+    }
+
+    .vip-hero{
+      text-align:center;
+      max-width:900px;
+      margin:0 auto 70px;
+    }
+
+    .vip-hero h2{
+      font-size:3.6rem;
+      margin-bottom:20px;
+      background:linear-gradient(to right,#d60000,#ffce73);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .vip-hero p{
+      color:#d0d0d0;
+      line-height:1.8;
+      font-size:1.08rem;
+    }
+
+    .vip-section-box{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:45px;
+      max-width:1200px;
+      margin:0 auto 70px;
+    }
+
+    .vip-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:26px;
+    }
+
+    .vip-card{
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:24px;
+      overflow:hidden;
+      transition:.3s;
+    }
+
+    .vip-card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(255,0,0,.35);
+      box-shadow:0 0 28px rgba(255,0,0,.13);
+    }
+
+    .vip-card video{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      background:#111;
+      display:block;
+    }
+
+    .vip-card-content{
+      padding:24px;
+    }
+
+    .vip-card-content h4{
+      color:#ffce73;
+      margin-bottom:10px;
+      font-size:1.2rem;
+    }
+
+    .vip-card-content p{
+      color:#ccc;
+      line-height:1.7;
+    }
+
+    .vip-badge{
+      display:inline-block;
+      background:linear-gradient(135deg,#a00000,#ff0000);
+      color:white;
+      padding:6px 13px;
+      border-radius:30px;
+      font-size:.72rem;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .photo-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:18px;
+    }
+
+    .photo-gallery img{
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.1);
+      transition:.3s;
+    }
+
+    .photo-gallery img:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 25px rgba(255,0,0,.18);
+    }
+
+    .support-area,
+    .live-chat-box{
+      text-align:center;
+    }
+
+    .support-area h3,
+    .live-chat-box h3{
+      color:#ffce73;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .support-area p,
+    .live-chat-box p{
+      color:#ccc;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .fake-chat{
+      max-width:520px;
+      margin:30px auto 0;
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:25px;
+      text-align:left;
+    }
+
+    .chat-message{
+      padding:14px 18px;
+      border-radius:18px;
+      margin-bottom:18px;
+      line-height:1.6;
+    }
+
+    .chat-message.bot{
+      background:rgba(255,255,255,.08);
+      color:#ddd;
+    }
+
+    .chat-option{
+      display:block;
+      color:white;
+      text-decoration:none;
+      background:linear-gradient(135deg,#700000,#c90000);
+      padding:14px 18px;
+      border-radius:18px;
+      margin-top:12px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .chat-option:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg,#a00000,#ff0000);
+    }
+
     footer{
       padding:40px 8%;
       text-align:center;
@@ -279,6 +445,11 @@
       section{padding:80px 7%}
       .payment-box{padding:35px 20px}
       .premium-heading{font-size:2.1rem}
+
+      .vip-page{padding-top:90px}
+      .vip-hero h2{font-size:2.5rem}
+      .vip-section-box{padding:30px 18px}
+      .photo-gallery{grid-template-columns:repeat(2,1fr)}
     }
   </style>
 </head>
@@ -294,7 +465,6 @@
   <nav>
     <a href="#services" data-i18n="nav_services">Servizi</a>
     <a href="#stats" data-i18n="nav_stats">Statistiche</a>
-    <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
     <a href="#payment" data-i18n="nav_premium">Premium</a>
   </nav>
 </header>
@@ -360,402 +530,218 @@
     <div class="stat"><h2>1M+</h2><p data-i18n="stat_3">Views social</p></div>
     <div class="stat"><h2>24/7</h2><p data-i18n="stat_4">Community attiva</p></div>
   </div>
-</section>
-
-<section id="reviews">
+</section><section id="payment">
   <div class="section-title">
-    <h3 data-i18n="reviews_title">Recensioni Utenti</h3>
-    <p data-i18n="reviews_subtitle">Feedback della community premium</p>
-  </div>
-
-  <div class="reviews">
-    <div class="review">
-      <h5>Marco • Italia</h5>
-      <p data-i18n="review_1">Community attiva e pronostici fatti bene. Finalmente qualcosa di diverso dal solito canale spam.</p>
-    </div>
-
-    <div class="review">
-      <h5>Lucas • Spain</h5>
-      <p data-i18n="review_2">Premium content quality is insane. Design, community and engagement are on another level.</p>
-    </div>
-
-    <div class="review">
-      <h5>Kevin • Switzerland</h5>
-      <p data-i18n="review_3">Very active premium group and fast support. Worth the access.</p>
-    </div>
-  </div>
-</section>
-
-<section id="payment">
-  <div class="section-title">
-    <h3 data-i18n="payment_title">RedLustBet Premium</h3>
-    <p data-i18n="payment_subtitle">
-      Accesso esclusivo a pronostici VIP, contenuti premium e community privata.
+    <h3>RedLustBet Premium</h3>
+    <p>
+      Accesso esclusivo ai contenuti VIP RedLustBet
     </p>
-  </div>
-
-  <div class="payment-box">
-
-    <h2 class="premium-heading" data-i18n="premium_heading">
-      Premium Access
-    </h2>
-
-    <p class="premium-intro" data-i18n="premium_intro">
-      Entra nella sezione privata RedLustBet e ricevi contenuti esclusivi,
-      pronostici selezionati e aggiornamenti riservati.
-    </p>
-
-    <div class="cards premium-grid">
-
-      <div class="card">
-        <h4 data-i18n="premium_card_1_title">VIP Predictions</h4>
-        <p data-i18n="premium_card_1_text">
-          Pronostici premium, analisi partite e selezioni esclusive.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4 data-i18n="premium_card_2_title">Private Community</h4>
-        <p data-i18n="premium_card_2_text">
-          Accesso al gruppo premium con aggiornamenti e contenuti riservati.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4 data-i18n="premium_card_3_title">Exclusive Content</h4>
-        <p data-i18n="premium_card_3_text">
-          Contenuti creator, format speciali e materiale non pubblico.
-        </p>
-      </div>
-
-    </div>
-
-    <div id="payment-button"></div>
-
-    <p class="secure-note" data-i18n="secure_payment">
-      Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.
-    </p>
-
-    <div class="instant-access">
-      <h4 data-i18n="instant_access_title">Accesso immediato</h4>
-      <p data-i18n="instant_access_text">
-        Dopo il pagamento riceverai l’accesso ai contenuti premium RedLustBet.
-      </p>
-    </div>
-
-    <div class="language-note" id="geo-note"></div>
-
-  </div>
-</section>
-
-<section id="vip">
-  <div class="section-title">
-    <h3>Area VIP RedLustBet</h3>
-    <p>Accesso riservato agli utenti premium</p>
   </div>
 
   <div class="payment-box">
 
     <h2 class="premium-heading">
-      Accesso VIP Confermato
+      Premium Access
     </h2>
 
     <p class="premium-intro">
-      Benvenuto nell’area privata RedLustBet. Da qui puoi accedere al canale Telegram VIP,
-      ai pronostici premium e ai contenuti riservati.
+      Accedi ai video hot esclusivi, galleria privata e contenuti premium.
     </p>
 
     <div class="cards premium-grid">
 
       <div class="card">
-        <h4>Telegram VIP</h4>
+        <h4>Video Hot</h4>
         <p>
-          Entra nel canale premium RedLustBet.
-        </p>
-        <br>
-        <a href="https://t.me/+WToY1dOuOz02NDU0" target="_blank" class="btn btn-primary">
-          Entra nel Telegram VIP
-        </a>
-      </div>
-
-      <div class="card">
-        <h4>Pronostici Premium</h4>
-        <p>
-          Analisi riservate, selezioni VIP e aggiornamenti esclusivi.
+          Accesso agli ultimi contenuti premium.
         </p>
       </div>
 
       <div class="card">
-        <h4>Supporto</h4>
+        <h4>Foto Esclusive</h4>
         <p>
-          Se hai problemi con l’accesso, contattaci su Instagram.
+          Galleria privata premium.
         </p>
-        <br>
-        <a href="https://www.instagram.com/redlustbet" target="_blank" class="btn btn-primary">
-          Contatta RedLustBet
-        </a>
       </div>
 
+      <div class="card">
+        <h4>Supporto Diretto</h4>
+        <p>
+          Assistenza immediata su Telegram.
+        </p>
+      </div>
+
+    </div>
+
+    <div id="payment-button">
+      <a href="https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
+         class="btn btn-primary">
+         Accedi Premium • 19.99 CHF
+      </a>
+    </div>
+
+    <p class="secure-note">
+      Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.
+    </p>
+
+    <div class="instant-access">
+      <h4>Accesso immediato</h4>
+      <p>
+        Dopo il pagamento verrai reindirizzato automaticamente alla VIP.
+      </p>
     </div>
 
   </div>
 </section>
 
+
+<!-- AREA VIP -->
+
+<section id="vip" class="vip-page">
+
+  <div class="vip-hero">
+    <h2>RedLustBet VIP</h2>
+    <p>
+      Video hot, foto esclusive e supporto diretto.
+    </p>
+  </div>
+
+  <!-- VIDEO GALLERY -->
+  <div class="vip-section-box">
+    <div class="section-title">
+      <h3>Ultimi Video Hot</h3>
+      <p>Gli ultimi contenuti caricati.</p>
+    </div>
+
+    <div class="vip-gallery">
+
+      <div class="vip-card">
+        <video controls poster="poster-1.jpg">
+          <source src="video-hot-1.mp4" type="video/mp4">
+        </video>
+
+        <div class="vip-card-content">
+          <span class="vip-badge">NUOVO</span>
+          <h4>🔥 Hot Prediction #1</h4>
+          <p>Ultimo contenuto pubblicato.</p>
+        </div>
+      </div>
+
+      <div class="vip-card">
+        <video controls poster="poster-2.jpg">
+          <source src="video-hot-2.mp4" type="video/mp4">
+        </video>
+
+        <div class="vip-card-content">
+          <h4>🔥 Hot Prediction #2</h4>
+          <p>Secondo contenuto recente.</p>
+        </div>
+      </div>
+
+      <div class="vip-card">
+        <video controls poster="poster-3.jpg">
+          <source src="video-hot-3.mp4" type="video/mp4">
+        </video>
+
+        <div class="vip-card-content">
+          <h4>🔥 Hot Prediction #3</h4>
+          <p>Terzo contenuto recente.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- FOTO GALLERY -->
+  <div class="vip-section-box">
+    <div class="section-title">
+      <h3>Galleria Foto VIP</h3>
+      <p>Foto premium esclusive.</p>
+    </div>
+
+    <div class="photo-gallery">
+
+      <img src="foto-vip-1.jpg">
+      <img src="foto-vip-2.jpg">
+      <img src="foto-vip-3.jpg">
+      <img src="foto-vip-4.jpg">
+      <img src="foto-vip-5.jpg">
+      <img src="foto-vip-6.jpg">
+
+    </div>
+  </div>
+
+
+  <!-- TELEGRAM SUPPORT -->
+  <div class="vip-section-box support-area">
+    <h3>Supporto Telegram</h3>
+
+    <p>
+      Per problemi con accesso o pagamento contattami direttamente.
+    </p>
+
+    <a href="https://t.me/Swiss1997"
+       target="_blank"
+       class="btn btn-primary">
+       Contatta @Swiss1997
+    </a>
+  </div>
+
+
+  <!-- LIVE CHAT -->
+  <div class="vip-section-box live-chat-box">
+
+    <h3>Live Chat Problemi</h3>
+
+    <p>
+      Se hai problemi seleziona una delle opzioni rapide.
+    </p>
+
+    <div class="fake-chat">
+
+      <div class="chat-message bot">
+        Ciao 👋 Come possiamo aiutarti?
+      </div>
+
+      <a href="https://t.me/Swiss1997"
+         target="_blank"
+         class="chat-option">
+         Ho pagato ma non vedo la VIP
+      </a>
+
+      <a href="https://t.me/Swiss1997"
+         target="_blank"
+         class="chat-option">
+         Problemi con i video
+      </a>
+
+      <a href="https://t.me/Swiss1997"
+         target="_blank"
+         class="chat-option">
+         Problemi con le foto
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <footer>
-  <span data-i18n="footer_rights">© 2026 RedLustBet • Tutti i diritti riservati</span>
+  © 2026 RedLustBet • Tutti i diritti riservati
   <br><br>
-  <span data-i18n="footer_disclaimer">18+ Only • Gioca responsabilmente</span>
+  18+ Only • Gioca responsabilmente
 </footer>
 
+
 <script>
-  const STRIPE_LINKS = {
-    CHF: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
-    EUR: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
-    USD: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00",
-    CNY: "https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00"
-  };
+  const stripeBtn = document.querySelector("#payment-button a");
 
-  const translations = {
-    it: {
-      nav_services: "Servizi",
-      nav_stats: "Statistiche",
-      nav_reviews: "Reviews",
-      nav_premium: "Premium",
-
-      hero_title: "Dove il gioco incontra il desiderio",
-      hero_text: "Pronostici premium, creator esclusivi e una community internazionale costruita per chi vuole vivere il betting come esperienza luxury.",
-      telegram_free: "Telegram Free",
-      premium_access: "Accedi VIP",
-
-      services_title: "I Nostri Servizi",
-      services_subtitle: "Premium luxury betting entertainment",
-      service_1_title: "Pronostici VIP",
-      service_1_text: "Analisi calcistiche premium, multiple selezionate e strategie pensate per utenti avanzati.",
-      service_2_title: "Creator Esclusive",
-      service_2_text: "Collaborazioni internazionali con creator e modelle selezionate per contenuti premium.",
-      service_3_title: "Community Telegram",
-      service_3_text: "Accesso diretto ai canali RedLustBet con aggiornamenti, contenuti premium e quote live.",
-      service_4_title: "Statistiche Vincite",
-      service_4_text: "Performance tracking, risultati e statistiche condivise con la community.",
-
-      stats_title: "Le Nostre Statistiche",
-      stats_subtitle: "Numeri, perché internet pretende prove anche dal destino.",
-      stat_1: "Win Rate Premium",
-      stat_2: "Utenti raggiunti",
-      stat_3: "Views social",
-      stat_4: "Community attiva",
-
-      reviews_title: "Recensioni Utenti",
-      reviews_subtitle: "Feedback della community premium",
-      review_1: "Community attiva e pronostici fatti bene. Finalmente qualcosa di diverso dal solito canale spam.",
-      review_2: "Qualità dei contenuti premium altissima. Design, community e coinvolgimento su un altro livello.",
-      review_3: "Gruppo premium molto attivo e supporto veloce. Accesso consigliato.",
-
-      payment_title: "RedLustBet Premium",
-      payment_subtitle: "Accesso esclusivo a pronostici VIP, contenuti premium e community privata.",
-      premium_heading: "Premium Access",
-      premium_intro: "Entra nella sezione privata RedLustBet e ricevi contenuti esclusivi, pronostici selezionati e aggiornamenti riservati.",
-      premium_card_1_title: "VIP Predictions",
-      premium_card_1_text: "Pronostici premium, analisi partite e selezioni esclusive.",
-      premium_card_2_title: "Private Community",
-      premium_card_2_text: "Accesso al gruppo premium con aggiornamenti e contenuti riservati.",
-      premium_card_3_title: "Exclusive Content",
-      premium_card_3_text: "Contenuti creator, format speciali e materiale non pubblico.",
-      secure_payment: "Pagamento sicuro tramite Visa, Mastercard, PayPal, Apple Pay e Google Pay.",
-      instant_access_title: "Accesso immediato",
-      instant_access_text: "Dopo il pagamento riceverai l’accesso ai contenuti premium RedLustBet.",
-      pay_button: "Accedi Premium",
-
-      footer_rights: "© 2026 RedLustBet • Tutti i diritti riservati",
-      footer_disclaimer: "18+ Only • Gioca responsabilmente"
-    },
-
-    en: {
-      nav_services: "Services",
-      nav_stats: "Stats",
-      nav_reviews: "Reviews",
-      nav_premium: "Premium",
-
-      hero_title: "Where betting meets desire",
-      hero_text: "Premium football insights, exclusive creators and an international community designed for a luxury betting entertainment experience.",
-      telegram_free: "Free Telegram",
-      premium_access: "Premium Access",
-
-      services_title: "Our Services",
-      services_subtitle: "Premium luxury betting entertainment",
-      service_1_title: "VIP Predictions",
-      service_1_text: "Premium football analysis, selected bets and strategies for advanced users.",
-      service_2_title: "Exclusive Creators",
-      service_2_text: "International collaborations with selected creators and models for premium content.",
-      service_3_title: "Telegram Community",
-      service_3_text: "Direct access to RedLustBet channels with updates, premium content and live odds.",
-      service_4_title: "Winning Statistics",
-      service_4_text: "Performance tracking, results and statistics shared with the community.",
-
-      stats_title: "Our Statistics",
-      stats_subtitle: "Numbers, because the internet apparently needs proof for everything.",
-      stat_1: "Premium Win Rate",
-      stat_2: "Community Reach",
-      stat_3: "Social Views",
-      stat_4: "Active Community",
-
-      reviews_title: "User Reviews",
-      reviews_subtitle: "Premium community feedback",
-      review_1: "Active community and solid predictions. Finally something different from the usual spam channel.",
-      review_2: "Premium content quality is insane. Design, community and engagement are on another level.",
-      review_3: "Very active premium group and fast support. Worth the access.",
-
-      payment_title: "RedLustBet Premium",
-      payment_subtitle: "Exclusive access to VIP predictions, premium content and private community.",
-      premium_heading: "Premium Access",
-      premium_intro: "Join the private RedLustBet section and receive exclusive content, selected predictions and reserved updates.",
-      premium_card_1_title: "VIP Predictions",
-      premium_card_1_text: "Premium predictions, match analysis and exclusive selections.",
-      premium_card_2_title: "Private Community",
-      premium_card_2_text: "Access to the premium group with reserved updates and exclusive content.",
-      premium_card_3_title: "Exclusive Content",
-      premium_card_3_text: "Creator content, special formats and private material.",
-      secure_payment: "Secure payment via Visa, Mastercard, PayPal, Apple Pay and Google Pay.",
-      instant_access_title: "Instant Access",
-      instant_access_text: "After payment, you will receive access to RedLustBet premium content.",
-      pay_button: "Get Premium",
-
-      footer_rights: "© 2026 RedLustBet • All Rights Reserved",
-      footer_disclaimer: "18+ Only • Play Responsibly"
-    },
-
-    es: {
-      nav_services: "Servicios",
-      nav_stats: "Estadísticas",
-      nav_reviews: "Opiniones",
-      nav_premium: "Premium",
-
-      hero_title: "Donde el juego encuentra el deseo",
-      hero_text: "Predicciones premium, creadoras exclusivas y una comunidad internacional diseñada para una experiencia de betting luxury.",
-      telegram_free: "Telegram Gratis",
-      premium_access: "Acceso Premium",
-
-      services_title: "Nuestros Servicios",
-      services_subtitle: "Premium luxury betting entertainment",
-      service_1_title: "Predicciones VIP",
-      service_1_text: "Análisis de fútbol premium, selecciones cuidadas y estrategias para usuarios avanzados.",
-      service_2_title: "Creadoras Exclusivas",
-      service_2_text: "Colaboraciones internacionales con creadoras y modelos seleccionadas para contenido premium.",
-      service_3_title: "Comunidad Telegram",
-      service_3_text: "Acceso directo a los canales RedLustBet con actualizaciones, contenido premium y cuotas en vivo.",
-      service_4_title: "Estadísticas Ganadoras",
-      service_4_text: "Seguimiento de rendimiento, resultados y estadísticas compartidas con la comunidad.",
-
-      stats_title: "Nuestras Estadísticas",
-      stats_subtitle: "Números, porque internet necesita pruebas hasta para respirar.",
-      stat_1: "Win Rate Premium",
-      stat_2: "Usuarios alcanzados",
-      stat_3: "Views sociales",
-      stat_4: "Comunidad activa",
-
-      reviews_title: "Opiniones de Usuarios",
-      reviews_subtitle: "Feedback de la comunidad premium",
-      review_1: "Comunidad activa y predicciones bien hechas. Por fin algo diferente al típico canal spam.",
-      review_2: "La calidad del contenido premium es brutal. Diseño, comunidad y engagement a otro nivel.",
-      review_3: "Grupo premium muy activo y soporte rápido. Vale la pena.",
-
-      payment_title: "RedLustBet Premium",
-      payment_subtitle: "Acceso exclusivo a predicciones VIP, contenido premium y comunidad privada.",
-      premium_heading: "Acceso Premium",
-      premium_intro: "Entra en la sección privada de RedLustBet y recibe contenido exclusivo, predicciones seleccionadas y actualizaciones reservadas.",
-      premium_card_1_title: "Predicciones VIP",
-      premium_card_1_text: "Predicciones premium, análisis de partidos y selecciones exclusivas.",
-      premium_card_2_title: "Comunidad Privada",
-      premium_card_2_text: "Acceso al grupo premium con actualizaciones y contenido reservado.",
-      premium_card_3_title: "Contenido Exclusivo",
-      premium_card_3_text: "Contenido de creadoras, formatos especiales y material privado.",
-      secure_payment: "Pago seguro con Visa, Mastercard, PayPal, Apple Pay y Google Pay.",
-      instant_access_title: "Acceso inmediato",
-      instant_access_text: "Después del pago recibirás acceso al contenido premium de RedLustBet.",
-      pay_button: "Acceder Premium",
-
-      footer_rights: "© 2026 RedLustBet • Todos los derechos reservados",
-      footer_disclaimer: "18+ Only • Juega responsablemente"
-    }
-  };
-
-  function getLanguageByCountry(country) {
-    const spanishCountries = [
-      "ES","MX","AR","CO","CL","PE","VE","EC","UY","PY","BO","CR","PA","DO","GT","HN","SV","NI"
-    ];
-
-    if (country === "IT" || country === "CH") return "it";
-    if (spanishCountries.includes(country)) return "es";
-    return "en";
-  }
-
-  function getCurrencyByCountry(country) {
-    const euroCountries = [
-      "IT","FR","DE","ES","PT","NL","BE","AT","IE","FI",
-      "GR","LU","SI","SK","EE","LV","LT","CY","MT"
-    ];
-
-    if (country === "CH") return "CHF";
-    if (country === "CN") return "CNY";
-    if (euroCountries.includes(country)) return "EUR";
-    return "USD";
-  }
-
-  function applyLanguage(lang) {
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-      const key = element.getAttribute("data-i18n");
-
-      if (translations[lang] && translations[lang][key]) {
-        element.innerHTML = translations[lang][key];
-      }
-    });
-  }
-
-  function renderPaymentButton(lang, currency) {
-    const prices = {
-      CHF: "19.99 CHF",
-      EUR: "21€",
-      USD: "$25",
-      CNY: "¥180"
-    };
-
-    const link = STRIPE_LINKS[currency] || STRIPE_LINKS.USD;
-    const label = translations[lang].pay_button;
-
-    document.getElementById("payment-button").innerHTML = `
-      <a href="${link}" class="btn btn-primary">
-        ${label} • ${prices[currency]}
-      </a>
-    `;
-  }
-
-  async function setupGeoExperience() {
-    let country = "DEFAULT";
-
-    try {
-      const response = await fetch("https://ipapi.co/json/");
-      const data = await response.json();
-
-      if (data && data.country) {
-        country = data.country;
-      }
-    } catch(error) {
-      country = "DEFAULT";
-    }
-
-    const lang = getLanguageByCountry(country);
-    const currency = getCurrencyByCountry(country);
-
-    applyLanguage(lang);
-    renderPaymentButton(lang, currency);
-
-    document.getElementById("geo-note").innerHTML =
-      `Language: ${lang.toUpperCase()} • Currency: ${currency}`;
-  }
-
-  setupGeoExperience();
+  stripeBtn.addEventListener("click", function () {
+    console.log("Redirect Stripe attivo");
+  });
 </script>
 
 </body>
