@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sblocca Premium - RedLustBet</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at top,rgba(220,38,38,.28),transparent 35%),
+        radial-gradient(circle at bottom,rgba(212,175,55,.18),transparent 35%),
+        #050505;
+      color:#fff;
+      padding:24px;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:auto;
+    }
+
+    header{
+      text-align:center;
+      margin:30px 0 45px;
+    }
+
+    .logo{
+      width:110px;
+      margin-bottom:18px;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(212,175,55,.14);
+      border:1px solid rgba(212,175,55,.25);
+      color:#ffd36a;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.5px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:42px;
+      line-height:1.1;
+      margin-bottom:14px;
+      background:linear-gradient(135deg,#ff1e1e,#ffd36a);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .subtitle{
+      color:#bdbdbd;
+      max-width:650px;
+      margin:auto;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .plans{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+      margin-top:35px;
+    }
+
+    .card{
+      position:relative;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
+      padding:32px 26px;
+      box-shadow:0 25px 70px rgba(0,0,0,.45);
+      overflow:hidden;
+    }
+
+    .card.featured{
+      border:1px solid rgba(212,175,55,.45);
+      background:
+        linear-gradient(135deg,rgba(220,0,0,.16),rgba(212,175,55,.08)),
+        rgba(255,255,255,.055);
+    }
+
+    .popular{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:#d4af37;
+      color:#050505;
+      font-size:11px;
+      font-weight:900;
+      padding:7px 11px;
+      border-radius:999px;
+    }
+
+    .plan{
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .price{
+      font-size:52px;
+      font-weight:900;
+      color:#ffd36a;
+      margin-bottom:6px;
+    }
+
+    .period{
+      color:#aaa;
+      margin-bottom:26px;
+    }
+
+    ul{
+      list-style:none;
+      margin-bottom:28px;
+    }
+
+    li{
+      color:#ddd;
+      font-size:14px;
+      margin-bottom:13px;
+    }
+
+    li::before{
+      content:"✓ ";
+      color:#ffd36a;
+      font-weight:800;
+    }
+
+    .btn{
+      display:block;
+      text-align:center;
+      width:100%;
+      padding:16px;
+      border-radius:999px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:900;
+      background:linear-gradient(135deg,#e00000,#8b0000,#d4af37);
+      box-shadow:0 12px 35px rgba(220,38,38,.30);
+    }
+
+    .back{
+      display:block;
+      text-align:center;
+      color:#aaa;
+      text-decoration:none;
+      margin-top:35px;
+      font-size:14px;
+    }
+
+    .secure{
+      margin-top:28px;
+      text-align:center;
+      color:#888;
+      font-size:13px;
+    }
+
+    @media(max-width:800px){
+      .plans{grid-template-columns:1fr}
+      h1{font-size:32px}
+      .price{font-size:44px}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <img src="logo.png" class="logo" alt="RedLustBet Logo">
+    <br>
+    <div class="badge">ACCESSO PREMIUM</div>
+    <h1>Sblocca la VIP Room</h1>
+    <p class="subtitle">
+      Accedi ai contenuti premium RedLustBet: video esclusivi, foto VIP,
+      pronostici riservati e contenuti aggiornati.
+    </p>
+  </header>
+
+  <div class="plans">
+
+    <div class="card">
+      <div class="plan">Weekly VIP</div>
+      <div class="price">8€</div>
+      <div class="period">Accesso per 7 giorni</div>
+
+      <ul>
+        <li>Video premium</li>
+        <li>Foto VIP</li>
+        <li>Pronostici esclusivi</li>
+        <li>Accesso area privata</li>
+      </ul>
+
+      <a class="btn" href="https://buy.stripe.com/dRm4gB1NTchRbCG6v38AE01">
+        Sblocca Weekly
+      </a>
+    </div>
+
+    <div class="card featured">
+      <div class="popular">CONSIGLIATO</div>
+
+      <div class="plan">Monthly VIP</div>
+      <div class="price">29€</div>
+      <div class="period">Accesso per 30 giorni</div>
+
+      <ul>
+        <li>Tutti i contenuti premium</li>
+        <li>Video e foto VIP</li>
+        <li>Pronostici riservati</li>
+        <li>Accesso più conveniente</li>
+        <li>Priorità sui nuovi contenuti</li>
+      </ul>
+
+      <a class="btn" href="https://buy.stripe.com/4gMbJ3eAFa9JayC4mV8AE00">
+        Sblocca Monthly
+      </a>
+    </div>
+
+  </div>
+
+  <div class="secure">
+    Pagamento sicuro tramite Stripe. Dopo il pagamento tornerai alla pagina di conferma.
+  </div>
+
+  <a href="dashboard.html" class="back">Torna alla dashboard</a>
+
+</div>
+
+</body>
+</html>
