@@ -1,34 +1,221 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Registrati - RedLustBet</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(220, 38, 38, 0.28), transparent 35%),
+        radial-gradient(circle at bottom, rgba(212, 175, 55, 0.18), transparent 35%),
+        #050505;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(15, 15, 15, 0.92);
+      border: 1px solid rgba(255, 215, 120, 0.18);
+      border-radius: 28px;
+      padding: 32px 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(14px);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo img {
+      max-width: 120px;
+      margin-bottom: 12px;
+    }
+
+    .brand {
+      font-size: 14px;
+      color: #d4af37;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ff1e1e, #ffd36a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #b8b8b8;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #ddd;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 18px;
+      padding: 16px;
+      margin-top: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(135deg, #e00000, #8b0000, #d4af37);
+      box-shadow: 0 12px 35px rgba(220, 38, 38, 0.32);
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .links a {
+      color: #ffd36a;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .message {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #ff7777;
+      min-height: 20px;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: #777;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Crea il tuo account</h1>
 
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button id="registerBtn">Registrati</button>
+  <div class="card">
+    <div class="logo">
+      <img src="logo.png" alt="RedLustBet Logo">
+      <div class="brand">RedLustBet</div>
+    </div>
 
-  <p>Hai già un account? <a href="login.html">Accedi</a></p>
+    <h1>Crea il tuo account</h1>
+    <p class="subtitle">Entra nel club privato. I contenuti premium si sbloccano dopo il pagamento.</p>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="La tua email">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Minimo 6 caratteri">
+    </div>
+
+    <button class="btn" id="registerBtn">CREA ACCOUNT</button>
+
+    <div class="message" id="message"></div>
+
+    <div class="links">
+      Hai già un account?
+      <a href="login.html">Accedi</a>
+    </div>
+
+    <p class="note">
+      Dopo la registrazione verrai portato nell’area privata.  
+      Il pagamento premium verrà collegato nello step successivo.
+    </p>
+  </div>
 
   <script type="module">
     import { auth } from "./firebase.js";
     import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
-    document.getElementById("registerBtn").addEventListener("click", async () => {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+    const registerBtn = document.getElementById("registerBtn");
+    const message = document.getElementById("message");
+
+    registerBtn.addEventListener("click", async () => {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!email || !password) {
+        message.textContent = "Inserisci email e password.";
+        return;
+      }
+
+      if (password.length < 6) {
+        message.textContent = "La password deve avere almeno 6 caratteri.";
+        return;
+      }
 
       try {
         await createUserWithEmailAndPassword(auth, email, password);
-        alert("Account creato con successo");
         window.location.href = "dashboard.html";
       } catch (error) {
-        alert(error.message);
+        if (error.code === "auth/email-already-in-use") {
+          message.textContent = "Questa email è già registrata.";
+        } else {
+          message.textContent = "Errore registrazione. Riprova.";
+        }
       }
     });
   </script>
+
 </body>
 </html>
