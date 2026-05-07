@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>RedLustBet VIP</title>
+  <title>RedLustBet VIP Gallery</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -16,18 +16,20 @@
       font-family:'Poppins',sans-serif;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       background:#050505;
       color:white;
-      min-height:100vh;
       overflow-x:hidden;
     }
 
     body::before{
       content:"";
       position:fixed;
-      width:100%;
-      height:100%;
+      inset:0;
       background:
         radial-gradient(circle at top,rgba(180,0,0,.35),transparent 40%),
         radial-gradient(circle at bottom,rgba(255,180,0,.12),transparent 45%);
@@ -36,13 +38,16 @@
 
     header{
       width:100%;
-      padding:20px 8%;
+      padding:18px 8%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:rgba(0,0,0,.75);
+      background:rgba(0,0,0,.78);
       border-bottom:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(12px);
+      position:sticky;
+      top:0;
+      z-index:99;
     }
 
     .logo{
@@ -52,32 +57,32 @@
     }
 
     .logo img{
-      width:55px;
-      height:55px;
+      width:52px;
+      height:52px;
       object-fit:contain;
     }
 
     .logo h1{
       color:#d60000;
-      font-size:1.6rem;
+      font-size:1.5rem;
       letter-spacing:1px;
     }
 
-    .back-link{
+    .support-link{
       color:#ffce73;
       text-decoration:none;
       font-weight:600;
+      font-size:.95rem;
     }
 
     main{
-      padding:80px 8%;
-      max-width:1200px;
-      margin:auto;
+      padding:70px 8%;
     }
 
     .hero{
       text-align:center;
-      margin-bottom:60px;
+      max-width:950px;
+      margin:0 auto 70px;
     }
 
     .hero h2{
@@ -91,10 +96,23 @@
 
     .hero p{
       color:#d0d0d0;
-      max-width:760px;
-      margin:auto;
+      font-size:1.08rem;
       line-height:1.8;
-      font-size:1.05rem;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .section-title h3{
+      font-size:2.3rem;
+      margin-bottom:10px;
+      color:white;
+    }
+
+    .section-title p{
+      color:#aaa;
     }
 
     .vip-box{
@@ -102,46 +120,103 @@
       border:1px solid rgba(255,255,255,.08);
       border-radius:28px;
       padding:45px;
-      margin-bottom:35px;
+      max-width:1200px;
+      margin:0 auto 70px;
       box-shadow:0 0 35px rgba(255,0,0,.08);
     }
 
-    .vip-box h3{
-      color:#ffce73;
-      font-size:1.8rem;
-      margin-bottom:18px;
-    }
-
-    .vip-box p{
-      color:#d0d0d0;
-      line-height:1.8;
-      margin-bottom:20px;
-    }
-
-    .cards{
+    .gallery{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-      margin-top:30px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:26px;
     }
 
-    .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:30px;
+    .video-card{
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:24px;
+      overflow:hidden;
+      transition:.3s;
     }
 
-    .card h4{
-      color:#ffce73;
+    .video-card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(255,0,0,.35);
+      box-shadow:0 0 28px rgba(255,0,0,.13);
+    }
+
+    .video-box{
+      width:100%;
+      aspect-ratio:16/9;
+      background:#111;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .video-content{
+      padding:24px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:linear-gradient(135deg,#a00000,#ff0000);
+      color:white;
+      padding:6px 13px;
+      border-radius:30px;
+      font-size:.72rem;
+      font-weight:700;
       margin-bottom:12px;
-      font-size:1.2rem;
+      letter-spacing:.5px;
     }
 
-    .card p{
+    .video-date{
+      color:#999;
+      font-size:.83rem;
+      margin-bottom:9px;
+    }
+
+    .video-content h4{
+      color:#ffce73;
+      font-size:1.22rem;
+      margin-bottom:10px;
+    }
+
+    .video-content p{
       color:#d0d0d0;
       line-height:1.7;
-      margin:0;
+      font-size:.95rem;
+    }
+
+    .archive-title{
+      margin-top:65px;
+    }
+
+    .support-box{
+      text-align:center;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:45px;
+      max-width:850px;
+      margin:0 auto;
+    }
+
+    .support-box h3{
+      color:#ffce73;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .support-box p{
+      color:#ccc;
+      line-height:1.8;
+      margin-bottom:28px;
     }
 
     .btn{
@@ -151,7 +226,6 @@
       text-decoration:none;
       font-weight:600;
       transition:.3s;
-      margin-top:15px;
     }
 
     .btn-primary{
@@ -165,11 +239,11 @@
     }
 
     footer{
+      padding:40px 8%;
       text-align:center;
       color:#8f8f8f;
-      padding:40px 8%;
+      font-size:.9rem;
       border-top:1px solid rgba(255,255,255,.08);
-      margin-top:50px;
     }
 
     @media(max-width:768px){
@@ -186,20 +260,32 @@
         font-size:1.25rem;
       }
 
-      .back-link{
-        font-size:.85rem;
+      .support-link{
+        font-size:.8rem;
       }
 
       main{
-        padding:60px 7%;
+        padding:55px 6%;
       }
 
       .hero h2{
-        font-size:2.5rem;
+        font-size:2.45rem;
+      }
+
+      .hero p{
+        font-size:1rem;
       }
 
       .vip-box{
-        padding:30px 22px;
+        padding:28px 18px;
+      }
+
+      .section-title h3{
+        font-size:1.9rem;
+      }
+
+      .support-box{
+        padding:32px 20px;
       }
     }
   </style>
@@ -213,77 +299,149 @@
     <h1>RedLustBet VIP</h1>
   </div>
 
-  <a class="back-link" href="index.html">Home</a>
+  <a class="support-link" href="https://t.me/Swiss1997" target="_blank">
+    Assistenza @Swiss1997
+  </a>
 </header>
 
 <main>
 
   <section class="hero">
-    <h2>Accesso VIP Confermato</h2>
+    <h2>VIP Hot Predictions Gallery</h2>
     <p>
-      Benvenuto nella sezione privata RedLustBet. Qui trovi i contenuti riservati,
-      l’accesso Telegram Premium e gli aggiornamenti dedicati agli utenti VIP.
+      Benvenuto nell’area privata RedLustBet. Qui trovi i pronostici pubblicati
+      sotto forma di video hot, ordinati dal più recente al più vecchio.
     </p>
   </section>
 
   <section class="vip-box">
-    <h3>Telegram Premium</h3>
-    <p>
-      Clicca il pulsante qui sotto per entrare nel canale premium RedLustBet.
-    </p>
 
-    <a class="btn btn-primary" href="https://t.me/+WToY1dOuOz02NDU0" target="_blank">
-      Entra nel Telegram VIP
-    </a>
-  </section>
-
-  <section class="vip-box">
-    <h3>Area Premium</h3>
-    <p>
-      Questa pagina è riservata agli utenti che hanno completato il pagamento.
-      Da qui puoi gestire l’accesso ai contenuti VIP, ai pronostici e agli aggiornamenti esclusivi.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <h4>Pronostici VIP</h4>
-        <p>
-          Selezioni premium, analisi partite e aggiornamenti riservati.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Contenuti Esclusivi</h4>
-        <p>
-          Format speciali, contenuti creator e materiale non pubblico.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Community Privata</h4>
-        <p>
-          Accesso diretto al gruppo premium e comunicazioni riservate.
-        </p>
-      </div>
+    <div class="section-title">
+      <h3>Ultimi 3 Video in Evidenza</h3>
+      <p>I contenuti più recenti vengono mostrati qui per primi.</p>
     </div>
+
+    <div class="gallery">
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="poster-1.jpg">
+            <source src="video-hot-1.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <span class="badge">NUOVO</span>
+          <div class="video-date">07/05/2026</div>
+          <h4>🔥 Hot Prediction #1</h4>
+          <p>Ultimo video pronostico hot pubblicato nella VIP Gallery.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="poster-2.jpg">
+            <source src="video-hot-2.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <div class="video-date">06/05/2026</div>
+          <h4>🔥 Hot Prediction #2</h4>
+          <p>Secondo video pronostico hot più recente.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="poster-3.jpg">
+            <source src="video-hot-3.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <div class="video-date">05/05/2026</div>
+          <h4>🔥 Hot Prediction #3</h4>
+          <p>Terzo video pronostico hot più recente.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-title archive-title">
+      <h3>Archivio Video VIP</h3>
+      <p>Contenuti precedenti disponibili per gli utenti premium.</p>
+    </div>
+
+    <div class="gallery">
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="archive-poster-1.jpg">
+            <source src="archive-video-1.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <div class="video-date">Archivio</div>
+          <h4>Hot Archive #1</h4>
+          <p>Video precedente della gallery privata.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="archive-poster-2.jpg">
+            <source src="archive-video-2.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <div class="video-date">Archivio</div>
+          <h4>Hot Archive #2</h4>
+          <p>Video precedente della gallery privata.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-box">
+          <video controls poster="archive-poster-3.jpg">
+            <source src="archive-video-3.mp4" type="video/mp4">
+            Il tuo browser non supporta il video.
+          </video>
+        </div>
+
+        <div class="video-content">
+          <div class="video-date">Archivio</div>
+          <h4>Hot Archive #3</h4>
+          <p>Video precedente della gallery privata.</p>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
-  <section class="vip-box">
-    <h3>Supporto</h3>
+  <section class="support-box">
+    <h3>Assistenza Privata</h3>
     <p>
-      Se hai completato il pagamento ma non riesci ad accedere al canale VIP,
-      contatta RedLustBet tramite Instagram.
+      Per problemi con accesso VIP, pagamenti o contenuti, contattami direttamente su Telegram.
     </p>
 
-    <a class="btn btn-primary" href="https://www.instagram.com/redlustbet" target="_blank">
-      Contatta su Instagram
+    <a href="https://t.me/Swiss1997" target="_blank" class="btn btn-primary">
+      Contatta @Swiss1997
     </a>
   </section>
 
 </main>
 
 <footer>
-  © 2026 RedLustBet • Area VIP • 18+ Only
+  © 2026 RedLustBet VIP • 18+ Only • Gioca responsabilmente
 </footer>
 
 </body>
