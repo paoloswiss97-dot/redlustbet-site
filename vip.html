@@ -1,202 +1,251 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RedLustBet VIP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>VIP Area - RedLustBet</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-background:#050505;
-color:white;
-padding:40px;
-}
+    body {
+      background: linear-gradient(135deg, #000000, #2b0000);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+    }
 
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at top,rgba(180,0,0,.35),transparent 40%),
-radial-gradient(circle at bottom,rgba(255,180,0,.12),transparent 40%);
-z-index:-1;
-}
+    header {
+      padding: 22px;
+      background: #000;
+      border-bottom: 2px solid #d4af37;
+    }
 
-h1{
-text-align:center;
-font-size:3rem;
-margin-bottom:20px;
-background:linear-gradient(to right,#d60000,#ffce73);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+    header h1 {
+      color: #d4af37;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
 
-.subtitle{
-text-align:center;
-color:#ccc;
-margin-bottom:50px;
-}
+    .vip-banner {
+      padding: 45px 20px 25px;
+    }
 
-.section-title{
-text-align:center;
-margin:50px 0;
-}
+    .vip-banner h2 {
+      color: #ff2d55;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
+    .vip-banner p {
+      color: #ddd;
+      max-width: 760px;
+      margin: auto;
+      line-height: 1.6;
+    }
 
-.card{
-background:rgba(255,255,255,.04);
-border-radius:20px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.08);
-}
+    .section {
+      padding: 38px 20px;
+    }
 
-video{
-width:100%;
-height:250px;
-object-fit:cover;
-}
+    .section h2 {
+      color: #d4af37;
+      margin-bottom: 22px;
+      font-size: 24px;
+    }
 
-.card-content{
-padding:20px;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
 
-.photo-gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-}
+    .card {
+      background: #111;
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 0 18px rgba(255, 0, 0, 0.28);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
 
-.photo-gallery img{
-width:100%;
-border-radius:20px;
-}
+    video,
+    img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      background: #000;
+    }
 
-.support-box{
-margin-top:60px;
-text-align:center;
-background:rgba(255,255,255,.04);
-padding:40px;
-border-radius:20px;
-}
+    .card p {
+      margin-top: 10px;
+      color: #ddd;
+      font-size: 14px;
+    }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:linear-gradient(135deg,#a00000,#ff0000);
-color:white;
-text-decoration:none;
-border-radius:50px;
-margin-top:20px;
-}
+    .telegram-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 15px 30px;
+      background: linear-gradient(90deg, #b40000, #d4af37);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+    }
 
-.chat-box{
-margin-top:50px;
-background:rgba(255,255,255,.04);
-padding:40px;
-border-radius:20px;
-text-align:center;
-}
-</style>
+    .logout-btn {
+      margin-top: 24px;
+      padding: 13px 28px;
+      background: #b40000;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 35px;
+      padding: 22px;
+      background: #000;
+      color: #aaa;
+      font-size: 13px;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>RedLustBet VIP</h1>
+  <header>
+    <h1>REDLUSTBET VIP</h1>
+  </header>
 
-<p class="subtitle">
-Benvenuto nella tua area privata.
-</p>
+  <section class="vip-banner">
+    <h2>Area Premium</h2>
+    <p>
+      Accesso esclusivo ai contenuti premium RedLustBet:
+      video VIP, galleria privata, contatto diretto Telegram
+      e supporto live per gli utenti registrati.
+    </p>
+  </section>
 
-<section>
-<div class="section-title">
-<h2>Ultimi Video Hot</h2>
-</div>
+  <section class="section">
+    <h2>Ultimi Video Premium</h2>
 
-<div class="gallery">
+    <div class="gallery">
+      <div class="card">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+        <p>Exclusive Video #1</p>
+      </div>
 
-<div class="card">
-<video controls poster="poster-1.jpg">
-<source src="video-hot-1.mp4" type="video/mp4">
-</video>
-<div class="card-content">
-<h3>Hot Prediction #1</h3>
-</div>
-</div>
+      <div class="card">
+        <video controls>
+          <source src="video2.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+        <p>Exclusive Video #2</p>
+      </div>
 
-<div class="card">
-<video controls poster="poster-2.jpg">
-<source src="video-hot-2.mp4" type="video/mp4">
-</video>
-<div class="card-content">
-<h3>Hot Prediction #2</h3>
-</div>
-</div>
+      <div class="card">
+        <video controls>
+          <source src="video3.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+        <p>Exclusive Video #3</p>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<video controls poster="poster-3.jpg">
-<source src="video-hot-3.mp4" type="video/mp4">
-</video>
-<div class="card-content">
-<h3>Hot Prediction #3</h3>
-</div>
-</div>
+  <section class="section">
+    <h2>Galleria Foto VIP</h2>
 
-</div>
-</section>
+    <div class="gallery">
+      <div class="card">
+        <img src="photo1.jpg" alt="Foto VIP 1">
+      </div>
 
-<section>
-<div class="section-title">
-<h2>Galleria Foto VIP</h2>
-</div>
+      <div class="card">
+        <img src="photo2.jpg" alt="Foto VIP 2">
+      </div>
 
-<div class="photo-gallery">
-<img src="foto-vip-1.jpg">
-<img src="foto-vip-2.jpg">
-<img src="foto-vip-3.jpg">
-<img src="foto-vip-4.jpg">
-<img src="foto-vip-5.jpg">
-<img src="foto-vip-6.jpg">
-</div>
-</section>
+      <div class="card">
+        <img src="photo3.jpg" alt="Foto VIP 3">
+      </div>
+    </div>
+  </section>
 
-<div class="support-box">
-<h2>Supporto Telegram</h2>
+  <section class="section">
+    <h2>Contatto Diretto</h2>
 
-<p>
-Per problemi contattami direttamente.
-</p>
+    <a href="https://t.me/redlustb" class="telegram-btn" target="_blank">
+      Contatta su Telegram
+    </a>
+  </section>
 
-<a href="https://t.me/Swiss1997" class="btn">
-Contatta @Swiss1997
-</a>
-</div>
+  <section class="section">
+    <h2>Supporto Live</h2>
+    <p>Per problemi tecnici o accessi, contattaci direttamente su Telegram.</p>
 
-<div class="chat-box">
-<h2>Live Chat Problemi</h2>
+    <button class="logout-btn" onclick="logout()">
+      Logout
+    </button>
+  </section>
 
-<p>
-Hai problemi di accesso?
-</p>
+  <footer>
+    © RedLustBet Premium
+  </footer>
 
-<a href="https://t.me/Swiss1997" class="btn">
-Apri Chat
-</a>
-</div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD0M3w8_6CN5_azfQbVDO_dtoaJjbUrxjs",
+      authDomain: "redlustbet.firebaseapp.com",
+      projectId: "redlustbet",
+      storageBucket: "redlustbet.firebasestorage.app",
+      messagingSenderId: "1071361085496",
+      appId: "1:1071361085496:web:9c6d7e7de49e372a35d6cd",
+      measurementId: "G-4TK9NDTKHS"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    window.logout = function () {
+      signOut(auth)
+        .then(() => {
+          window.location.href = "login.html";
+        })
+        .catch((error) => {
+          console.error("Errore logout:", error);
+        });
+    };
+  </script>
 
 </body>
 </html>
