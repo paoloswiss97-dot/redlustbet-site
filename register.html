@@ -1,124 +1,115 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - RedLustBet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrati - RedLustBet</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #050505, #300000);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#000,#300000);
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
 
-    .box {
-      width: 90%;
-      max-width: 420px;
-      background: rgba(0,0,0,0.85);
-      padding: 35px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(255,0,0,0.35);
-      text-align: center;
-    }
+        .container{
+            background:rgba(255,255,255,0.05);
+            padding:30px;
+            border-radius:15px;
+            width:90%;
+            max-width:400px;
+            text-align:center;
+            box-shadow:0 0 20px rgba(255,0,0,0.3);
+        }
 
-    h1 {
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
+        h1{
+            color:#ff0000;
+            margin-bottom:20px;
+        }
 
-    p {
-      color: #ccc;
-      font-size: 14px;
-    }
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:none;
+            border-radius:8px;
+        }
 
-    input {
-      width: 100%;
-      padding: 14px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-    }
+        button{
+            width:100%;
+            padding:12px;
+            background:#ff0000;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight:bold;
+        }
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #b40000, #d4af37);
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        button:hover{
+            background:#cc0000;
+        }
 
-    a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    #message {
-      margin-top: 15px;
-      color: #ff6b6b;
-      font-size: 14px;
-    }
-  </style>
+        a{
+            color:gold;
+            text-decoration:none;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="box">
-    <h1>RedLustBet</h1>
-    <p>Accedi alla tua area privata</p>
+<div class="container">
+    <h1>RedLustBet Register</h1>
 
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
+    <input type="email" id="email" placeholder="Inserisci email">
+    <input type="password" id="password" placeholder="Inserisci password">
 
-    <button onclick="login()">Accedi</button>
+    <button onclick="registerUser()">Registrati</button>
 
-    <p>Non hai un account? <a href="register.html">Registrati</a></p>
+    <p style="margin-top:20px;">
+        Hai già un account?
+        <a href="login.html">Login</a>
+    </p>
+</div>
 
-    <div id="message"></div>
-  </div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+    getAuth,
+    createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "TUA_API_KEY",
+    authDomain: "TUO_AUTH_DOMAIN",
+    projectId: "TUO_PROJECT_ID",
+    storageBucket: "TUO_STORAGE_BUCKET",
+    messagingSenderId: "TUO_MESSAGING_SENDER_ID",
+    appId: "TUO_APP_ID"
+};
 
-    const firebaseConfig = {
-      apiKey: "INCOLLA_LA_TUA_API_KEY",
-      authDomain: "INCOLLA_AUTH_DOMAIN",
-      projectId: "INCOLLA_PROJECT_ID",
-      storageBucket: "INCOLLA_STORAGE_BUCKET",
-      messagingSenderId: "INCOLLA_MESSAGING_SENDER_ID",
-      appId: "INCOLLA_APP_ID"
-    };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+window.registerUser = function() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-    window.login = function() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const message = document.getElementById("message");
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          window.location.href = "vip.html";
-        })
-        .catch((error) => {
-          message.innerText = "Email o password non corretti.";
-          console.error(error);
-        });
-    };
-  </script>
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        alert("Registrazione completata!");
+        window.location.href = "pricing.html";
+    })
+    .catch((error) => {
+        alert(error.message);
+    });
+}
+</script>
 
 </body>
 </html>
