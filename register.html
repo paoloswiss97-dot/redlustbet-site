@@ -1,115 +1,162 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrati - RedLustBet</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-        body{
-            margin:0;
-            font-family:Arial,sans-serif;
-            background:linear-gradient(135deg,#000,#300000);
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-        }
+  <title>Registrazione - RedLustBet</title>
 
-        .container{
-            background:rgba(255,255,255,0.05);
-            padding:30px;
-            border-radius:15px;
-            width:90%;
-            max-width:400px;
-            text-align:center;
-            box-shadow:0 0 20px rgba(255,0,0,0.3);
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        h1{
-            color:#ff0000;
-            margin-bottom:20px;
-        }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #2b0000);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
-        input{
-            width:100%;
-            padding:12px;
-            margin:10px 0;
-            border:none;
-            border-radius:8px;
-        }
+    .box {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(0, 0, 0, 0.88);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 22px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(180, 0, 0, 0.35);
+    }
 
-        button{
-            width:100%;
-            padding:12px;
-            background:#ff0000;
-            color:white;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            font-weight:bold;
-        }
+    h1 {
+      color: #d4af37;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
 
-        button:hover{
-            background:#cc0000;
-        }
+    p {
+      color: #ccc;
+      margin-bottom: 22px;
+    }
 
-        a{
-            color:gold;
-            text-decoration:none;
-        }
-    </style>
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 9px 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #b40000, #d4af37);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: #ff6b6b;
+      font-size: 14px;
+      min-height: 20px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>RedLustBet Register</h1>
+  <div class="box">
+    <h1>RedLustBet</h1>
+    <p>Crea il tuo account</p>
 
-    <input type="email" id="email" placeholder="Inserisci email">
-    <input type="password" id="password" placeholder="Inserisci password">
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
 
-    <button onclick="registerUser()">Registrati</button>
+    <button onclick="register()">Registrati</button>
 
-    <p style="margin-top:20px;">
-        Hai già un account?
-        <a href="login.html">Login</a>
+    <p style="margin-top:22px;">
+      Hai già un account? <a href="login.html">Login</a>
     </p>
-</div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {
-    getAuth,
-    createUserWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    <div id="message"></div>
+  </div>
 
-const firebaseConfig = {
-    apiKey: "TUA_API_KEY",
-    authDomain: "TUO_AUTH_DOMAIN",
-    projectId: "TUO_PROJECT_ID",
-    storageBucket: "TUO_STORAGE_BUCKET",
-    messagingSenderId: "TUO_MESSAGING_SENDER_ID",
-    appId: "TUO_APP_ID"
-};
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+    import {
+      getAuth,
+      createUserWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-window.registerUser = function() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const firebaseConfig = {
+      apiKey: "AIzaSyD0M3w8_6CN5_azfQbVDO_dtoaJjbUrxjs",
+      authDomain: "redlustbet.firebaseapp.com",
+      projectId: "redlustbet",
+      storageBucket: "redlustbet.firebasestorage.app",
+      messagingSenderId: "1071361085496",
+      appId: "1:1071361085496:web:9c6d7e7de49e372a35d6cd",
+      measurementId: "G-4TK9NDTKHS"
+    };
 
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        alert("Registrazione completata!");
-        window.location.href = "pricing.html";
-    })
-    .catch((error) => {
-        alert(error.message);
-    });
-}
-</script>
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.register = function () {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      if (!email || !password) {
+        message.innerText = "Inserisci email e password.";
+        return;
+      }
+
+      if (password.length < 6) {
+        message.innerText = "La password deve avere almeno 6 caratteri.";
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "vip.html";
+        })
+        .catch((error) => {
+          console.error(error);
+
+          if (error.code === "auth/email-already-in-use") {
+            message.innerText = "Email già registrata. Fai login.";
+          } else if (error.code === "auth/invalid-email") {
+            message.innerText = "Email non valida.";
+          } else if (error.code === "auth/weak-password") {
+            message.innerText = "Password troppo debole.";
+          } else {
+            message.innerText = "Errore registrazione: " + error.message;
+          }
+        });
+    };
+  </script>
 
 </body>
 </html>
