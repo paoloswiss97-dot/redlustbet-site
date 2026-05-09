@@ -1,216 +1,123 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - RedLustBet</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #050505, #300000);
+      color: white;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at top, rgba(220, 38, 38, 0.28), transparent 35%),
-        radial-gradient(circle at bottom, rgba(212, 175, 55, 0.18), transparent 35%),
-        #050505;
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
     }
 
-    .card {
-      width: 100%;
+    .box {
+      width: 90%;
       max-width: 420px;
-      background: rgba(15, 15, 15, 0.92);
-      border: 1px solid rgba(255, 215, 120, 0.18);
-      border-radius: 28px;
-      padding: 32px 24px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(14px);
-    }
-
-    .logo {
+      background: rgba(0,0,0,0.85);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255,0,0,0.35);
       text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .logo img {
-      max-width: 120px;
-      margin-bottom: 12px;
-    }
-
-    .brand {
-      font-size: 14px;
-      color: #d4af37;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     h1 {
-      text-align: center;
-      font-size: 30px;
-      line-height: 1.15;
+      color: #d4af37;
       margin-bottom: 10px;
-      background: linear-gradient(135deg, #ff1e1e, #ffd36a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
-    .subtitle {
-      text-align: center;
-      color: #b8b8b8;
+    p {
+      color: #ccc;
       font-size: 14px;
-      margin-bottom: 28px;
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      color: #ddd;
-      margin-bottom: 8px;
     }
 
     input {
       width: 100%;
-      padding: 15px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-      font-size: 15px;
-      outline: none;
-    }
-
-    input:focus {
-      border-color: #d4af37;
-      box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
-    }
-
-    .btn {
-      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
       border: none;
-      border-radius: 18px;
-      padding: 16px;
-      margin-top: 10px;
-      font-weight: 800;
-      font-size: 15px;
-      color: #fff;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #b40000, #d4af37);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
-      background: linear-gradient(135deg, #e00000, #8b0000, #d4af37);
-      box-shadow: 0 12px 35px rgba(220, 38, 38, 0.32);
     }
 
-    .btn:active {
-      transform: scale(0.98);
+    a {
+      color: #d4af37;
+      text-decoration: none;
     }
 
-    .links {
-      text-align: center;
-      margin-top: 22px;
+    #message {
+      margin-top: 15px;
+      color: #ff6b6b;
       font-size: 14px;
-      color: #aaa;
-    }
-
-    .links a {
-      color: #ffd36a;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .telegram {
-      display: block;
-      margin-top: 18px;
-      text-align: center;
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      opacity: 0.8;
-    }
-
-    .message {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 13px;
-      color: #ff7777;
-      min-height: 20px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
-    <div class="logo">
-      <img src="logo.png" alt="RedLustBet Logo">
-      <div class="brand">RedLustBet</div>
-    </div>
+  <div class="box">
+    <h1>RedLustBet</h1>
+    <p>Accedi alla tua area privata</p>
 
-    <h1>Accesso Premium</h1>
-    <p class="subtitle">Pronostici esclusivi, contenuti privati e area VIP.</p>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
 
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" id="email" placeholder="Inserisci la tua email">
-    </div>
+    <button onclick="login()">Accedi</button>
 
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" id="password" placeholder="Inserisci la password">
-    </div>
+    <p>Non hai un account? <a href="register.html">Registrati</a></p>
 
-    <button class="btn" id="loginBtn">ENTRA ORA</button>
-
-    <div class="message" id="message"></div>
-
-    <div class="links">
-      Non hai un account?
-      <a href="register.html">Registrati</a>
-    </div>
-
-    <a class="telegram" href="https://t.me/redlustb" target="_blank">
-      Telegram Free
-    </a>
+    <div id="message"></div>
   </div>
 
   <script type="module">
-    import { auth } from "./firebase.js";
-    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    const loginBtn = document.getElementById("loginBtn");
-    const message = document.getElementById("message");
+    const firebaseConfig = {
+      apiKey: "INCOLLA_LA_TUA_API_KEY",
+      authDomain: "INCOLLA_AUTH_DOMAIN",
+      projectId: "INCOLLA_PROJECT_ID",
+      storageBucket: "INCOLLA_STORAGE_BUCKET",
+      messagingSenderId: "INCOLLA_MESSAGING_SENDER_ID",
+      appId: "INCOLLA_APP_ID"
+    };
 
-    loginBtn.addEventListener("click", async () => {
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      if (!email || !password) {
-        message.textContent = "Inserisci email e password.";
-        return;
-      }
+    window.login = function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
 
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = "dashboard.html";
-      } catch (error) {
-        message.textContent = "Email o password non corretti.";
-      }
-    });
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          window.location.href = "vip.html";
+        })
+        .catch((error) => {
+          message.innerText = "Email o password non corretti.";
+          console.error(error);
+        });
+    };
   </script>
 
 </body>
